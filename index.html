@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Узнай новости</title>
+  <link rel="icon" sizes="32x32" href="../image/favicon.png">
+  <link rel="stylesheet" href="../vender/normalize.css">
+  <link rel= "stylesheet" href= "../blocks/style.css">
+  <meta name="Keywords" content="новости, наука, природа, новинки, события">
+  <meta name="author" content="Орлов Данил">
+  <meta name="description" content="Страница, чтобы узнать последние новости со всего мира">
+</head>
+<body>
+  <!--как должна себя вести страница на разрешение больше 1440px-->
+  <div class="page">
+    <section class="search">
+      <header class="header">
+        <h3 class="header__logo">
+          NewsExplorer
+        </h3>
+        <div class="header__menu">
+          <!--указать куда ведет ссылка, сделать подчеркивание-->
+          <a class="header__link" href="./index.html">
+            Главная
+          </a>
+          <a class="header__link" href="./saved-articles/index.html">
+            Сохранённые статьи
+          </a>
+          <!--нужна ли анимация?-->
+          <button class="header__button">
+            Авторизоваться
+          </button>
+          <button class="header__button">
+            Гретта
+            <img class="button-image" src="../image/logout.svg" alt="иконка входа">
+          </button>
+        </div>
+      </header>
+      <div class="search-main">
+        <h1 class="search-main__title">
+          Что в мире <br>
+          творится?
+        </h1>
+        <p class="search-main__text">
+          Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
+        </p>
+        <form class="search-field">
+          <input class="search-field__text" placeholder="Введите тему новости">
+          <button class="search-field__button">
+            Искать
+          </button>
+        </form>
+      </div>
+    </section>
+    <section class="result-search">
+      <div class="not-found">
+        <img class="not-found__image" src="../image/not-found_v1.png" alt="изображение грустного человека">
+        <h2 class="not-found__title">
+          Ничего не найдено
+        </h2>
+        <p class="not-found__text">
+          К сожалению по вашему запросу <br>
+          ничего не найдено.
+        </p>
+      </div>
+
+      <h2 class='result-search__title'>
+        Результаты поиска
+      </h2>
+      <div class="place-card">
+        <div class="card">
+          <div class="card__image">
+            <button class="card__save-icon">
+
+            </button>
+          </div>
+          <div class="card__information">
+            <p class="card__data">
+              2 августа, 2019
+            </p>
+            <h3 class="card__title">
+              Национальное достояние – парки
+            </h3>
+            <p class="card__text">
+              В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+            </p>
+            <p class="card__source">
+              Лента.ру
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image">
+            <button class="card__save-icon">
+            </button>
+          </div>
+          <div class="card__information">
+            <p class="card__data">
+              2 августа, 2019
+            </p>
+            <h3 class="card__title">
+              Лесные огоньки: история одной фотографии
+            </h3>
+            <p class="card__text">
+              Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.
+            </p>
+            <p class="card__source">
+              Лента.ру
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image">
+            <button class="card__save-icon">
+            </button>
+          </div>
+          <div class="card__information">
+            <p class="card__data">
+              2 августа, 2019
+            </p>
+            <h3 class="card__title">
+              «Первозданная тайга»: новый фотопроект Игоря Шпиленка
+            </h3>
+            <p class="card__text">
+              Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...
+            </p>
+            <p class="card__source">
+              Лента.ру
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image">
+            <button class="card__save-icon">
+
+            </button>
+          </div>
+          <div class="card__information">
+            <p class="card__data">
+              2 августа, 2019
+            </p>
+            <h3 class="card__title">
+              Национальное достояние – парки
+            </h3>
+            <p class="card__text">
+              В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+            </p>
+            <p class="card__source">
+              Лента.ру
+            </p>
+          </div>
+        </div>
+      </div>
+      <button class="result-search__button">
+        Показать еще
+      </button>
+    </section>
+    <section class="about-author">
+      <img class="about-author__foto" src="../image/image-03.png" alt="фото автора проекта">
+      <div class="about-author__text">
+        <h2 class="about-author__title">
+          Об авторе
+        </h2>
+        <p class="about-author__paragraph">
+          Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.
+          <br>
+          <br>
+          Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.
+        </p>
+      </div>
+    </section>
+    <footer class="footer">
+      <p class="name-author">
+        &#169; 2019. Orlov Danil
+      </p>
+      <nav class="footer__nav">
+       <!-- ссылка должна вести на главную страницу-->
+        <a class="footer__link" href="./index.html">
+          Главная
+        </a>
+        <a class="footer__link" target="_blank" href="https://praktikum.yandex.ru/">
+          Яндекс.Практикум
+        </a>
+      </nav>
+      <nav class="footer__nav_icon">
+        <a class="footer__link_icon" target="_blank" href="https://github.com/orDanAn">
+          <img alt="переход на github.com" src="../image/github.png">
+        </a>
+        <a class="footer__link_icon" target="_blank" href="https://www.facebook.com/profile.php?id=100011316277801">
+          <img alt="переход на facebook.com" src="../image/iconmonstr-facebook-6.png">
+        </a>
+      </nav>
+    </footer>
+      <!-- Чтобы открыть карточку необходимо добавить popap_is-opened-->
+    <div class="popup">
+      <div class="popup__content">
+        <img src="../image/icon-close.svg" alt="закрыть форму" class="popup__close">
+        <h3 class="popup__title">Вход</h3>
+        <form class="popup__form">
+          <p class="popup__input-name">Email</p>
+          <input type="email" class="popup__input" placeholder="Введите почту" required>
+          <p class="popup__error">Неправильный формат email</p>
+          <p class="popup__input-name">Пароль</p>
+          <input type="password" class="popup__input" placeholder="Введите пароль" required>
+          <p class="popup__error"></p>
+          <p class="popup__error popup__error_up-button">Неправильные почта или пароль</p>
+          <button class="popup__button">Войти</button>
+          <p class="popup__choice">
+            или <span class="popup__choice_color-blue">Зарегистрироваться</span>
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="popup">
+      <div class="popup__content">
+        <img src="../image/icon-close.svg" alt="закрыть форму" class="popup__close">
+        <h3 class="popup__title">Регистрация</h3>
+        <form class="popup__form">
+          <p class="popup__input-name">Email</p>
+          <input type="email" class="popup__input" placeholder="Введите почту" required>
+          <p class="popup__error">Неправильный формат email</p>
+          <p class="popup__input-name">Пароль</p>
+          <input type="password" class="popup__input" placeholder="Введите пароль" required>
+          <p class="popup__error"></p>
+          <p class="popup__input-name">Имя</p>
+          <input type="text" class="popup__input" placeholder="Введите своё имя" required>
+          <p class="popup__error"></p>
+          <p class="popup__error popup__error popup__error_up-button">Такой пользователь уже есть</p>
+          <button class="popup__button">Зарегистрироваться</button>
+          <p class="popup__choice">
+            или <span class="popup__choice_color-blue">Войти</span>
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="popup">
+      <div class="popup__content popup__content_message">
+        <img src="../image/icon-close.svg" alt="закрыть форму" class="popup__close">
+        <h3 class="popup__title popup__title_message">Пользователь успешно <br> зарегистрирован!</h3>
+        <a class="popup__link">Выполнить вход</a>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <script src="main.b2471929f95bbc553284.js"></script>
+
+</body>
+</html>
