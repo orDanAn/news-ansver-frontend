@@ -1,0 +1,19 @@
+@import url('./__image/card__image.css');
+@import url('./__save-icon/card__save-icon.css');
+@import url('./__information/card__information.css');
+@import url('./__data/card__data.css');
+@import url('./__title/card__title.css');
+@import url('./__text/card__text.css');
+@import url('./__source/card__source.css');
+
+.card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  width: 400px;
+  height: 576px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+
+}

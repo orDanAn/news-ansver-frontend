@@ -1,0 +1,11 @@
+@import url('./__foto/about-author__foto.css');
+@import url('./__text/about-author__text.css');
+
+.about-author {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 1440px;
+    width: 100%
+
+}

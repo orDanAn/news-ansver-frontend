@@ -1,0 +1,13 @@
+@import url('./_up-button/popup__error_up-button.css');
+
+.popup__error {
+    font-family: Inter, Times;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    position: absolute;
+    margin-top: -28px;
+
+}

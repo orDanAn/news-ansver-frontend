@@ -1,0 +1,12 @@
+@import url('../card/card.css');
+@import url('./_main-saved/place-card_main-saved.css');
+
+.place-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 86%;
+  background: #F5F6F7;
+}

@@ -1,0 +1,8 @@
+@import url('./__text/main-saved__text.css');
+@import url('./__title/main-saved__title.css');
+
+.main-saved {
+  display: flex;
+  flex-direction: column;
+
+}

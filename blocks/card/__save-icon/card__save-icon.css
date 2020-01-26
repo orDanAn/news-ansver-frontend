@@ -1,0 +1,15 @@
+.card__save-icon {
+  background-image: url('../../../image/Group\ 13.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  border: 0;
+  height: 40px;
+  width: 40px;
+  margin-top: 24px;
+  margin-right: 24px;
+}
+
+.card__save-icon:hover {
+  background-image: url('../../../image/Group\ 14.png');
+}
