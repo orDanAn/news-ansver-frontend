@@ -1,0 +1,25 @@
+@import url('./_about-news/card__message_about-news.css');
+
+.card__message {
+
+  font-family: Roboto, 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  border-radius: 10px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 22px rgba(59, 74, 116, 0.1);
+  height: 40px;
+  margin-top: 24px;
+  margin-right: 5px;
+  padding: 0 19px;
+
+}
+
+
+

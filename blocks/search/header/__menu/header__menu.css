@@ -3,3 +3,20 @@
   display: flex;
   align-items: center;
 }
+
+
+@media screen and (max-width: 1100px) {
+  .header__menu  {
+    padding-right: 80px;
+
+  }
+
+}
+
+@media screen and (max-width: 950px) {
+  .header__menu  {
+    padding-right: 40px;
+
+  }
+
+}

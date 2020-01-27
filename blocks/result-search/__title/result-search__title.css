@@ -10,3 +10,13 @@
   margin-bottom: 47px;
 
 }
+
+
+
+@media screen and (max-width: 930px) {
+  .result-search__title {
+    padding: 0 0 0 0;
+    margin: auto;
+  }
+
+}

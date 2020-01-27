@@ -7,3 +7,13 @@
     color: #B6BCBF;
     padding-left: 104px;
 }
+
+
+
+@media screen and (max-width: 950px) {
+  .name-author {
+    padding-left: 40px;
+
+  }
+
+}

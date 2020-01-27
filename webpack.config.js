@@ -81,7 +81,7 @@ module.exports = {
       filename: 'saved-articles/index.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
     }),
     new webpack.DefinePlugin({
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
     new WebpackMd5Hash(),
 

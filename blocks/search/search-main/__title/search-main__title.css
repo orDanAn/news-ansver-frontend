@@ -8,3 +8,13 @@
     width: 608px;
     margin: 80px 0 32px;
 }
+
+
+@media screen and (max-width: 770px) {
+  .search-main__title {
+    font-size: 36px;
+    line-height: 40px;
+
+  }
+
+}

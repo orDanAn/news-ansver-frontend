@@ -1,3 +1,12 @@
 .footer__nav_icon {
     padding-right: 106px;
 }
+
+
+@media screen and (max-width: 950px) {
+  .footer__nav_icon {
+    padding-right: 40px;
+
+  }
+
+}

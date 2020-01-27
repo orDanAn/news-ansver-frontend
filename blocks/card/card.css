@@ -5,6 +5,8 @@
 @import url('./__title/card__title.css');
 @import url('./__text/card__text.css');
 @import url('./__source/card__source.css');
+@import url('./__del-icon/card__del-icon.css');
+@import url('./__message/card__message.css');
 
 .card {
   background: #FFFFFF;

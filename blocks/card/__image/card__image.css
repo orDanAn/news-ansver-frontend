@@ -8,6 +8,7 @@
   height: 272px;
 
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  position: relative;
 }
