@@ -1,0 +1,32 @@
+@import url('./_black/header__link_black.css');
+@import url('./_underline/header__link_underline.css');
+@import url('./_underline-black/header__link_underline-black.css');
+
+.header__link {
+    font-family: Roboto, Times;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin-right: 26px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 770px) {
+  .header__link  {
+    font-size: 16px;
+    margin-right: 19px;
+
+  }
+
+}
+
+@media screen and (max-width: 685px) {
+  .header__link  {
+    display: none;
+
+  }
+
+}

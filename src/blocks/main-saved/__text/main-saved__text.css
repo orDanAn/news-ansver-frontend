@@ -1,0 +1,30 @@
+@import url('./_black/main-saved__text_black.css');
+
+.main-saved__text {
+  margin: 40px 0 0 104px;
+  font-family: Roboto, 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(26, 27, 34, 0.5);
+
+}
+
+@media screen and (max-width: 770px) {
+  .main-saved__text {
+    font-size: 14px;
+    margin: 25px 0 0 40px;
+
+  }
+
+}
+
+@media screen and (max-width: 509px) {
+  .main-saved__text {
+    font-size: 12px;
+    margin: 8px 0 16px 16px;
+
+  }
+
+}

@@ -1,0 +1,27 @@
+.about-author__paragraph {
+    font-family: Roboto, Times;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+    max-width: 600px;
+}
+
+@media screen and (max-width: 770px) {
+  .about-author__paragraph {
+    max-width: 424px;
+    margin: 0;
+
+  }
+
+}
+
+@media screen and (max-width: 685px) {
+  .about-author__paragraph {
+    max-width: 424px;
+    margin-bottom: 100px;
+
+  }
+
+}

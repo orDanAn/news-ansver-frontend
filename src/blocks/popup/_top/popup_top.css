@@ -1,0 +1,6 @@
+.popup.popup_top {
+  align-items: flex-start;
+  justify-content: center;
+  top: 0;
+  padding-top: 0;
+}

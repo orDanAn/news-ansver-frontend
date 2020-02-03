@@ -1,9 +1,0 @@
-.footer__link_icon {
-    margin-left: 23px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.footer__link_icon:first-of-type {
-    margin-left: 95px;
-}

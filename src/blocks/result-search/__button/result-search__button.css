@@ -1,0 +1,52 @@
+@import url('./_activ/result-search__button_activ.css');
+
+.result-search__button {
+  background: #FFFFFF;
+  border-radius: 80px;
+  border: 0;
+  width: 288px;
+  height: 64px;
+
+  font-family: Roboto, 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+  margin: auto;
+  margin-top: 64px;
+  margin-bottom: 80px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.result-search__button:hover {
+  opacity: 0.9;
+}
+
+.result-search__button:active {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 770px) {
+  .result-search__button {
+    width: 240px;
+    height: 56px;
+    margin-top: 33px;
+    margin-bottom: 40px;
+  }
+
+}
+
+@media screen and (max-width: 509px) {
+  .result-search__button {
+    width: 288px;
+    height: 56px;
+    margin-top: 22px;
+    margin-bottom: 32px;
+  }
+
+}

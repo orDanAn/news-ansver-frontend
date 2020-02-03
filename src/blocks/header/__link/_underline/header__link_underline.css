@@ -1,0 +1,17 @@
+.header__link_underline {
+  border-bottom: 3px solid #FFF;
+  padding-bottom: 26px;
+  margin-top: 29px;
+}
+
+
+
+@media screen and (max-width: 770px) {
+  .header__link_underline {
+    padding-bottom: 19px;
+    margin-top: 22px;
+
+
+  }
+
+}

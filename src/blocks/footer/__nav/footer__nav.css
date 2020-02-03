@@ -1,0 +1,12 @@
+
+@media screen and (max-width: 685px) {
+  .footer__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 0 0 0;
+
+  }
+
+}

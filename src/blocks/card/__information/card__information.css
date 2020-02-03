@@ -1,0 +1,26 @@
+@import url('./_height/card__information_height.css');
+
+.card__information {
+  position: relative;
+  width: 352px;
+  height: 304px;
+}
+
+
+@media screen and (max-width: 770px) {
+  .card__information {
+    width: 180px;
+    height: 270px;
+
+  }
+
+}
+
+@media screen and (max-width: 509px) {
+  .card__information {
+    width: 260px;
+    height: 270px;
+
+  }
+
+}

@@ -1,0 +1,32 @@
+.card__save-icon {
+  background-image: url('../../../image/Group\ 13.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  border: 0;
+  height: 40px;
+  width: 40px;
+  margin-top: 24px;
+  margin-right: 24px;
+  cursor: pointer;
+}
+
+.card__save-icon:hover {
+  background-image: url('../../../image/Group\ 14.png');
+}
+
+@media screen and (max-width: 770px) {
+  .card__save-icon {
+    margin-top: 8px;
+    margin-right: 8px;
+
+  }
+}
+
+@media screen and (max-width: 509px) {
+  .card__save-icon {
+    margin-top: 16px;
+    margin-right: 16px;
+
+  }
+}

@@ -1,0 +1,23 @@
+.place-card.place-card_main-saved {
+  padding-top: 45px;
+  padding-bottom: 60px;
+}
+
+
+@media screen and (max-width: 770px) {
+  .place-card.place-card_main-saved {
+    padding-top: 24px;
+    padding-bottom: 22px;
+
+  }
+
+}
+
+@media screen and (max-width: 509px) {
+  .place-card.place-card_main-saved {
+    padding-top: 14px;
+    padding-bottom: 10px;
+
+  }
+
+}

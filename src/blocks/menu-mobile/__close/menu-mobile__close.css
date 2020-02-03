@@ -1,0 +1,10 @@
+.menu-mobile__close {
+  background: rgba(196, 196, 196, 0.01);
+  background-image: url('../../../image/icon-close.svg');
+  background-size: cover;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border: 0;
+}
