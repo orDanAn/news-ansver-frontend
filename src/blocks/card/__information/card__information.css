@@ -16,7 +16,7 @@
 
 }
 
-@media screen and (max-width: 509px) {
+@media screen and (max-width: 764px) {
   .card__information {
     width: 260px;
     height: 270px;

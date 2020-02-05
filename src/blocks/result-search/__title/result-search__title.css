@@ -30,7 +30,7 @@
 
 }
 
-@media screen and (max-width: 509px) {
+@media screen and (max-width: 660px) {
   .result-search__title {
     margin: auto;
     width: 288px;

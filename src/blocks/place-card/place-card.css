@@ -49,7 +49,7 @@
 
 }
 
-@media screen and (max-width: 509px) {
+@media screen and (max-width: 660px) {
   .place-card {
     flex-direction: column;
     align-items: center;

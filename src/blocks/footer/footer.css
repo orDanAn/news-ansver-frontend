@@ -4,6 +4,7 @@
 @import url('./_mobile/footer_mobile.css');
 @import url('./__nav/footer__nav.css');
 
+
 .footer {
     display: flex;
     flex-direction: row;

@@ -1,6 +1,7 @@
 @import url('./_black/header__link_black.css');
 @import url('./_underline/header__link_underline.css');
 @import url('./_underline-black/header__link_underline-black.css');
+@import url('./_activ/header__link_activ.css');
 
 .header__link {
     font-family: Roboto, Times;
@@ -12,6 +13,7 @@
     margin-right: 26px;
     text-decoration: none;
     cursor: pointer;
+    display: none;
 }
 
 @media screen and (max-width: 770px) {

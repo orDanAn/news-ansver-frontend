@@ -8,6 +8,7 @@
   font-size: 14px;
   line-height: 24px;
   display:flex;
+  z-index: 1;
 }
 
 @media screen and (max-width: 770px) {
@@ -19,7 +20,7 @@
 
 }
 
-@media screen and (max-width: 509px) {
+@media screen and (max-width: 764px) {
   .card__message.card__message_about-news {
 
     left: 16px;

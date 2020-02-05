@@ -1,0 +1,9 @@
+.header__link.header__link_activ {
+  display: inline;
+}
+
+@media screen and (max-width: 685px) {
+  .header__link.header__link_activ {
+    display: none;
+  }
+}
