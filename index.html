@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Узнай новости</title>
   <link rel="icon" sizes="32x32" href="./images/favicon.png">
-  <link rel= "stylesheet" href= "style.727472ceddd0484392da.css">
+  <link rel= "stylesheet" href= "style.e53340b71a3decd2df72.css">
   <meta name="Keywords" content="новости, наука, природа, новинки, события">
   <meta name="author" content="Орлов Данил">
   <meta name="description" content="Страница, чтобы узнать последние новости со всего мира">
@@ -24,14 +24,14 @@
           <a class="header__link header__link_underline header__link_activ" href="./index.html">
             Главная
           </a>
-          <a class="header__link header__link_activ" href="./second.html">
+          <a class="header__link" href="./second.html">
             Сохранённые статьи
           </a>
           <!--для активации добавить класс activ-->
           <button class="header__button header__button_activ" id="authButton">
             Авторизоваться
           </button>
-          <button class="header__button header__button_activ">
+          <button class="header__button">
             Грета &#160;
             <img class="button-image" src="./images/logout.svg" alt="иконка выхода">
           </button>
@@ -208,58 +208,60 @@
       </p>
     </footer>
       <!-- Чтобы открыть карточку необходимо добавить popup_is-opened-->
-    <div class="popup">
+    <div class="popup" id="popup">
 
     </div>
     <template id="popup-auth">
       <div class="popup__content">
         <img src="./images/icon-close.svg" alt="закрыть форму" class="popup__close" id="popup-close">
         <h3 class="popup__title">Вход</h3>
-        <form class="popup__form">
+        <form class="popup__form" name="formAuth">
           <p class="popup__input-name">Email</p>
-          <input type="email" class="popup__input" placeholder="Введите почту" required>
-          <p class="popup__error">Неправильный формат email</p>
+          <input type="email" class="popup__input" placeholder="Введите почту" pattern="^([\w0-9_-]\.)*[\w0-9_-]+@[\w0-9_-]+(\.[\w0-9_-]+)*\.\w{2,6}$" required>
+          <p class="popup__error" id="formAuth-error-email"></p>
           <p class="popup__input-name">Пароль</p>
-          <input type="password" class="popup__input" placeholder="Введите пароль" required>
-          <p class="popup__error"></p>
-          <p class="popup__error popup__error_up-button">Неправильные почта или пароль</p>
-          <button class="popup__button">Войти</button>
+          <input type="password" class="popup__input" placeholder="Введите пароль" minlength="6" required>
+          <p class="popup__error" id="formAuth-error-password"></p>
+          <p class="popup__error popup__error_up-button" id="formAuth-error-up-button"></p>
+          <button class="popup__button" disabled id="button-formAuth">Войти</button>
           <p class="popup__choice">
-            или <span class="popup__choice_color-blue">Зарегистрироваться</span>
+            или <span class="popup__choice_color-blue" id="button-sign-up">Зарегистрироваться</span>
           </p>
         </form>
       </div>
     </template>
-    <div class="popup popup_is-opened">
-      <div class="popup__content">
+    <template id="popup-sign-up">
+        <div class="popup__content">
         <img src="./images/icon-close.svg" alt="закрыть форму" class="popup__close">
         <h3 class="popup__title">Регистрация</h3>
-        <form class="popup__form">
+        <form class="popup__form" name="formSingUp">
           <p class="popup__input-name">Email</p>
-          <input type="email" class="popup__input" placeholder="Введите почту" required>
-          <p class="popup__error">Неправильный формат email</p>
+          <input type="email" class="popup__input" placeholder="Введите почту" pattern="^([\w0-9_-]\.)*[\w0-9_-]+@[\w0-9_-]+(\.[\w0-9_-]+)*\.\w{2,6}$" required>
+          <p class="popup__error" id="formSingUp-error-email"></p>
           <p class="popup__input-name">Пароль</p>
-          <input type="password" class="popup__input" placeholder="Введите пароль" required>
-          <p class="popup__error"></p>
+          <input type="password" class="popup__input" placeholder="Введите пароль" minlength="6" required>
+          <p class="popup__error" id="formSingUp-error-password"></p>
           <p class="popup__input-name">Имя</p>
-          <input type="text" class="popup__input" placeholder="Введите своё имя" required>
-          <p class="popup__error"></p>
-          <p class="popup__error popup__error popup__error_up-button">Такой пользователь уже есть</p>
-          <button class="popup__button">Зарегистрироваться</button>
+          <input type="text" class="popup__input" placeholder="Введите своё имя" minlength="2" maxlength="20" required>
+          <p class="popup__error" id="formSingUp-error-name"></p>
+          <p class="popup__error popup__error popup__error_up-button" id="formSingUp-error-up-button"></p>
+          <button class="popup__button" disabled id="button-formSingUp">Зарегистрироваться</button>
           <p class="popup__choice">
-            или <span class="popup__choice_color-blue">Войти</span>
+            или <span class="popup__choice_color-blue" id="button-enter">Войти</span>
           </p>
         </form>
       </div>
-    </div>
-    <div class="popup popup_is-opened">
+    </template>
+
+    <template id="popup-sign-in">
       <div class="popup__content popup__content_message">
         <img src="./images/icon-close.svg" alt="закрыть форму" class="popup__close">
         <h3 class="popup__title popup__title_message">Пользователь успешно <br> зарегистрирован!</h3>
-        <a class="popup__link">Выполнить вход</a>
+        <a class="popup__link" id="enter">Выполнить вход</a>
       </div>
-    </div>
-    <div class="popup popup_top popup_is-opened">
+    </template>
+
+    <div class="popup popup_top">
     <div class="menu-mobile">
       <header class="header">
         <h3 class="header__logo">
@@ -294,7 +296,7 @@
 
   </div>
 
-  <script src="main.f6cc602f63b9a740e22a.js"></script>
+  <script src="main.a1a7d871795a7b8ac6ba.js"></script>
 
 </body>
 </html>
