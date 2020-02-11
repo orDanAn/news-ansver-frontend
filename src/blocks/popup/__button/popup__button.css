@@ -1,3 +1,5 @@
+@import url('./_validate/popup__button_validate.css');
+
 .popup__button {
     background: #E6E8EB;
     border-radius: 100px;
