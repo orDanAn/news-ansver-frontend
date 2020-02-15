@@ -1,26 +1,25 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
 import './style.css';
-import MainApi from './js/api/MainApi';
-import Popup from './js/components/Popup';
+import NewsApi from './js/api/NewsApi';
+import Button from './js/components/Button';
 import Form from './js/components/Form';
+import { popup, popupOpen, formAuth, formSignUp, api, formEnter, searchFieldButton, } from './js/constants/variables';
+import NewsCard from './js/components/NewsCard';
+import PlaceCard from './js/components/PlaceCard';
 
-const popup = document.querySelector('.popup');
-const popupOpen = document.getElementById('authButton');
-const popupAuth = document.getElementById('popup-auth');
-const popupSignUp = document.getElementById('popup-sign-up');
-const serverUrl = 'http://localhost:3000';  //https://www.api.news-ansver.site
+//new NewsCard().createNewsCard('title', 'null', 'null', 'null', 'null');
 
-const formAuth = new Popup(popup, popupAuth);
-const formSignUp = new Popup(popup, popupSignUp);
+const arr = new NewsApi();
+arr.getNews().then((res) => (res));
+console.log(arr.getNews().then(items => console.log(items)));
 
-const api = new MainApi({ // запускаем общение с сервером
-  baseUrl: serverUrl,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
 
+//console.log(arr.getNews().then(result => result));
+
+new PlaceCard(api.getArticles()); // массив надо сюда, но метод работае криво
+
+new Button(searchFieldButton).searchButton();
 //api.logout();
 //api.removeArticle('5e404ded39ee6f46cc7c0ba5');
 //api.createArticle("test2222", "title_test11777", "texjdkjnklnsdlkvl;ksdfmlkdmfgklmnlsdkklflkdnflknbvaldkflk;badlkfnmlkvlkd", "25.12.2019", "source-test11777", "https://trello.com/b/ek4iOP6z/news-ansver", 'https://trello.com/b/ek4iOP6z/news-ansver');
@@ -29,6 +28,9 @@ const api = new MainApi({ // запускаем общение с серверо
 //api.signin('test10@gmail.com', '12345678');
 //api.signup('test999@gmail.com', '123456789', 'test999');
 //api.getUserData();
+
+const form = new Form();
+
 popupOpen.addEventListener('click', formAuth.open);
 
 popup.addEventListener('click', (event) => {
@@ -42,15 +44,26 @@ popup.addEventListener('click', (event) => {
       formAuth.open();
     }
   }
+  if (event.target.getAttribute('id') === 'button-formAuth') {
+    event.preventDefault();
+    api.signin(document.forms[1].elements[0].value, document.forms[1].elements[1].value, form).then((res) => { if (res) { popup.classList.remove('popup_is-opened'); formAuth.clearContent(); } });
+  }
+  if (event.target.getAttribute('id') === 'button-formSingUp') {
+    event.preventDefault();
+    api.signup(document.forms[1].elements[0].value, document.forms[1].elements[1].value, document.forms[1].elements[2].value, form).then((res) => { if (res) { formSignUp.clearContent(); formEnter.open(); } });
+  }
+  if (event.target.getAttribute('id') === 'enter') {
+    formEnter.clearContent();
+    formAuth.open();
+  }
 });
+
+
 popup.addEventListener('input', (event) => {
   const input = event.target;
-  const form = new Form();
-
   form._validateInputElement(input);
   form._contentErrorMessage();
   form._validateForm();
 });
-
 
 console.log('Привет Я главная страница');

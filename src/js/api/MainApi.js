@@ -1,11 +1,12 @@
 /* eslint-disable no-undef */
+
 export default class MainApi {
   constructor(options) {
     this.options = options;
   }
 
-  signup(email, password, name) {
-    fetch(`${this.options.baseUrl}/signup`, {
+  signup(email, password, name, form) {
+    return fetch(`${this.options.baseUrl}/signup`, {
       credentials: 'include',
       method: 'POST',
       headers: {
@@ -23,20 +24,12 @@ export default class MainApi {
         }
         return Promise.reject(res.json()); // посмотреть как обробатывать ошибки в fetch
       })
-      .catch((err) => err)
-      .then((error) => {
-        if (error) {
-          console.log(error.message);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => err.then((res) => (form.setServerError(res.message))));
   }
 
   // eslint-disable-next-line class-methods-use-this
-  signin(email, password) {
-    fetch(`${this.options.baseUrl}/signin`, {
+  signin(email, password, form) {
+    return fetch(`${this.options.baseUrl}/signin`, {
       credentials: 'include',
       method: 'POST',
       headers: {
@@ -53,19 +46,11 @@ export default class MainApi {
         }
         return Promise.reject(res.json()); // посмотреть как обробатывать ошибки в fetch
       })
-      .catch((err) => err)
-      .then((error) => {
-        if (error) {
-          console.log(error.message);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => err.then((res) => (form.setServerError(res.message))));
   }
 
   logout() {
-    fetch(`${this.options.baseUrl}/users/logout`, {
+    return fetch(`${this.options.baseUrl}/users/logout`, {
       credentials: 'include',
     })
       .then((res) => {
@@ -86,7 +71,7 @@ export default class MainApi {
   }
 
   getUserData() {
-    fetch(`${this.options.baseUrl}/users/me`, {
+    return fetch(`${this.options.baseUrl}/users/me`, {
       credentials: 'include',
     })
 
@@ -112,7 +97,7 @@ export default class MainApi {
   }
 
   getArticles() {
-    fetch(`${this.options.baseUrl}/articles`, {
+    return fetch(`${this.options.baseUrl}/articles`, {
       credentials: 'include',
     })
 
@@ -138,7 +123,7 @@ export default class MainApi {
   }
 
   createArticle(keyword, title, text, date, source, link, image) {
-    fetch(`${this.options.baseUrl}/articles`, {
+    return fetch(`${this.options.baseUrl}/articles`, {
       credentials: 'include',
       method: 'POST',
       headers: {
@@ -175,7 +160,7 @@ export default class MainApi {
   }
 
   removeArticle(idArticle) {
-    fetch(`${this.options.baseUrl}/articles/${idArticle}`, { // удаление карт
+    return fetch(`${this.options.baseUrl}/articles/${idArticle}`, { // удаление карт
       credentials: 'include',
       method: 'DELETE',
       headers: {

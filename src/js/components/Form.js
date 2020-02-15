@@ -1,5 +1,8 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-undef */
+import Button from './Button';
+import { api } from '../constants/variables';
+
 export default class Form {
   constructor() {
     this.forms = document.forms;
@@ -8,32 +11,32 @@ export default class Form {
   _validateInputElement(input) {
     if (input.value.length === 0) {
       this.message = 'это обязательное поле';
-      console.log(this.message);
+      //console.log(this.message);
       return this.message;
     }
     if (input.getAttribute('type') === 'email') {
       if ((!input.checkValidity())) {
         this.message = 'необходимо указать почту в формате: sega@yandex.ru';
-        console.log(this.message);
+        //console.log(this.message);
         return this.message;
       }
     }
     if (input.getAttribute('type') === 'password') {
       if (input.value.length < 6) {
         this.message = 'необходимо указать пароль от 6 символов';
-        console.log(this.message);
+        //console.log(this.message);
         return this.message;
       }
     }
     if (input.getAttribute('type') === 'text') {
       if (input.value.length < 2 || input.value.length > 20) {
         this.message = 'необходимо указать имя от 2 до 20 символов';
-        console.log(this.message);
+        //console.log(this.message);
         return this.message;
       }
     }
     this.message = '';
-    console.log(this.message);
+   // console.log(this.message);
     return this.message;
   }
 
@@ -81,9 +84,9 @@ export default class Form {
     if (Array.from(this.forms).includes(formAuth)) {
       buttonFormAuth.setAttribute('disabled', true);
       buttonFormAuth.classList.remove('popup__button_validate');
-      console.log('ssss');
+
       if (formAuth.elements[0].value.length > 0 && errorEmailAuth.textContent === '' && errorPasswordAuth.textContent === '' && formAuth.elements[1].value.length > 0) {
-        console.log('ok');
+
         buttonFormAuth.removeAttribute('disabled');
         buttonFormAuth.classList.add('popup__button_validate');
       }
@@ -95,6 +98,17 @@ export default class Form {
         buttonFormSingUp.removeAttribute('disabled');
         buttonFormSingUp.classList.add('popup__button_validate');
       }
+    }
+  }
+
+  setServerError(errorServer) {
+    const formAuthErrorUpButton = document.getElementById('formAuth-error-up-button');
+    const formSingUpErrorUpButton = document.getElementById('formSingUp-error-up-button');
+    if (Array.from(this.forms).includes(this.forms.namedItem('formAuth'))) {
+      formAuthErrorUpButton.textContent = errorServer;
+    }
+    if (Array.from(this.forms).includes(this.forms.namedItem('formSingUp'))) {
+      formSingUpErrorUpButton.textContent = errorServer;
     }
   }
 }

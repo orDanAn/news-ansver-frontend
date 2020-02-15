@@ -1,3 +1,5 @@
+@import url('./_activ/result-search__title_activ.css');
+
 .result-search__title {
   font-family: Roboto Slab, 'Times New Roman', Times, serif;
   font-style: normal;
@@ -8,6 +10,7 @@
   margin-left: 104px;
   margin-top: 80px;
   margin-bottom: 47px;
+  display: none;
 
 }
 

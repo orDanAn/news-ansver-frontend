@@ -57,20 +57,47 @@
       </div>
     </section>
     <section class="result-search">
-    <div class="not-found">
-        <img class="not-found__image" src="<%=require('./image/not-found_v1.png').default%>" alt="изображение грустного человека">
-        <h2 class="not-found__title">
-          Ничего не найдено
-        </h2>
-        <p class="not-found__text">
-          К сожалению по вашему запросу <br>
-          ничего не найдено.
-        </p>
-      </div>
+    <template id="not-found">
+      <div class="not-found">
+          <img class="not-found__image" src="<%=require('./image/not-found_v1.png').default%>" alt="изображение грустного человека">
+          <h2 class="not-found__title">
+            Ничего не найдено
+          </h2>
+          <p class="not-found__text">
+            К сожалению по вашему запросу <br>
+            ничего не найдено.
+          </p>
+        </div>
+    </template>
+    <!-- для активации result-search__title_activ-->
       <h2 class='result-search__title'>
         Результаты поиска
       </h2>
       <div class="place-card">
+        <template id="card">
+          <div class="card">
+            <div class="card__image">
+              <button class="card__save-icon">
+
+              </button>
+              <p class="card__message"></p>
+
+            </div>
+            <div class="card__information">
+              <p class="card__data">
+              </p>
+              <div class="card__information_height">
+                <h3 class="card__title">
+                </h3>
+                <p class="card__text">
+                </p>
+              </div>
+              <p class="card__source">
+              </p>
+            </div>
+          </div>
+        </template>
+        <!-- пример карт
         <div class="card">
           <div class="card__image">
             <button class="card__save-icon">
@@ -141,9 +168,10 @@
             </p>
           </div>
         </div>
-
+        -->
       </div>
-      <button class="result-search__button result-search__button_activ">
+      <!-- для активации result-search__button_activ -->
+      <button class="result-search__button">
         Показать еще
       </button>
     </section>
