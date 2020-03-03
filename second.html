@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Узнай новости</title>
   <link rel="icon" sizes="32x32" href="./images/favicon.png">
-  <link rel= "stylesheet" href= "style.5d7118eaa630123366f0.css">
+  <link rel= "stylesheet" href= "style.b65e7710e6542915ae9d.css">
   <meta name="Keywords" content="новости, наука, природа, новинки, события">
   <meta name="author" content="Орлов Данил">
   <meta name="description" content="Страница, чтобы узнать последние новости со всего мира">
@@ -30,7 +30,7 @@
           <p class="button__text">ssss</p>
           <img class="button-image" src="./images/logout_black.png" alt="иконка входа">
         </button>
-        <button class="button-menu button-menu_black">
+        <button class="button-menu button-menu_black" id="buttonMenu">
 
         </button>
       </div>
@@ -40,7 +40,7 @@
         Сохранённые статьи
       </p>
       <h2 class='main-saved__title'>
-        Грета, у вас 5 <br>
+        <span class="main-saved-title__name">Грета</span>, у вас <span class="main-saved-title__nomber">5</span><br>
         сохранённых статей
       </h2>
       <p class="main-saved__text main-saved__text_black">
@@ -98,7 +98,7 @@
         &#169; 2019. Orlov Danil
       </p>
     </footer>
-    <div class="popup popup_top">
+    <div class="popup popup_top" id="menu-mobile">
     <div class="menu-mobile">
       <header class="header">
         <h3 class="header__logo">
@@ -111,18 +111,18 @@
       </header>
 
         <div class="menu-mobile__content">
-          <a class="menu-mobile__link" href="./index.html">
+          <a class="menu-mobile__link menu-mobile__link_activ" href="./index.html">
             Главная
           </a>
-          <a class="menu-mobile__link" href="./second.html">
+          <a class="menu-mobile__link" id="saved-articles-mobile" href="./second.html">
             Сохранённые статьи
           </a>
           <!--для активации добавить класс activ-->
-          <!--<button class="menu-mobile__button">
+          <button class="menu-mobile__button" id="authButton-mobile">
             Авторизоваться
-          </button> -->
-          <button class="menu-mobile__button">
-            Грета &#160;
+          </button>
+          <button class="menu-mobile__button" id="logOutButton-mobile">
+            <p class="button__text">ssss</p>
             <img class="button-image" src="./images/logout.svg" alt="иконка входа">
           </button>
         </div>
@@ -139,26 +139,28 @@
           <p class="card__message">Убрать из сохранённых</p>
           <p class="card__message card__message_about-news card__message_activ">Природа</p>
         </div>
-        <div class="card__information">
-          <p class="card__data">
-            2 августа, 2019
-          </p>
-          <div class="card__information_height">
-            <h3 class="card__title">
-              Национальное достояние – парки
-            </h3>
-            <p class="card__text">
-              В 2016 году Америка отмечала важный юбилей:  сто лет назад здесь сто лет назад здесь сто лет назад здесь сто лет назад здесь сто лет назад здесь сто лет назад здесь сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+        <a class="card__link"  href="" target="_blank">
+          <div class="card__information">
+            <p class="card__data">
+              2 августа, 2019
+            </p>
+            <div class="card__information_height">
+              <h3 class="card__title">
+                Национальное достояние – парки
+              </h3>
+              <p class="card__text">
+                В 2016 году Америка отмечала важный юбилей:  сто лет назад здесь сто лет назад здесь сто лет назад здесь сто лет назад здесь сто лет назад здесь сто лет назад здесь сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+            </div>
+            <p class="card__source">
+              Лента.ру
             </p>
           </div>
-          <a class="card__source" href="" target="_blank">
-            Лента.ру
-          </a>
-        </div>
+        </a>
       </div>
   </template>
 
 
-<script src="second.daa1cc99a15e1b1f31e4.js"></script>
+<script src="second.47d0f8f2abff25053d2a.js"></script>
 
 </body>

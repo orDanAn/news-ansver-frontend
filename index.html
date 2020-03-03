@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Узнай новости</title>
   <link rel="icon" sizes="32x32" href="./images/favicon.png">
-  <link rel= "stylesheet" href= "style.5d7118eaa630123366f0.css">
+  <link rel= "stylesheet" href= "style.b65e7710e6542915ae9d.css">
   <meta name="Keywords" content="новости, наука, природа, новинки, события">
   <meta name="author" content="Орлов Данил">
   <meta name="description" content="Страница, чтобы узнать последние новости со всего мира">
@@ -196,36 +196,41 @@
       </div>
     </template>
 
-    <div class="popup popup_top">
-    <div class="menu-mobile">
-      <header class="header">
-        <h3 class="header__logo">
-          NewsExplorer
-        </h3>
-        <div class="header__menu">
-          <button class="menu-mobile__close">
-          </button>
-        </div>
-      </header>
+    <!-- для включения popup_is-opened -->
 
-        <div class="menu-mobile__content">
-          <a class="menu-mobile__link" href="./index.html">
-            Главная
-          </a>
-          <a class="menu-mobile__link" href="./second.html">
-            Сохранённые статьи
-          </a>
-          <!--для активации добавить класс activ-->
-          <button class="menu-mobile__button">
-            Авторизоваться
-          </button>
-          <button class="menu-mobile__button">
-            Грета &#160;
-            <img class="button-image" src="./images/logout.svg" alt="иконка выхода">
-          </button>
+      <div class="popup popup_top" id="menu-mobile">
+        <div class="menu-mobile">
+          <header class="header">
+            <h3 class="header__logo">
+              NewsExplorer
+            </h3>
+            <div class="header__menu">
+              <button class="menu-mobile__close">
+              </button>
+            </div>
+          </header>
+
+          <div class="menu-mobile__content">
+            <a class="menu-mobile__link menu-mobile__link_activ" href="./index.html">
+              Главная
+            </a>
+            <!--для активации добавить класс menu-mobile__link_activ-->
+            <a class="menu-mobile__link" id="saved-articles-mobile" href="./second.html">
+              Сохранённые статьи
+            </a>
+              <!--для активации добавить класс menu-mobile__button_activ-->
+            <button class="menu-mobile__button" id="authButton-mobile">
+              Авторизоваться
+            </button>
+            <button class="menu-mobile__button" id="logOutButton-mobile">
+              <p class="button__text">ssss</p>
+              <img class="button-image" src="./images/logout.svg" alt="иконка выхода">
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+
+
     <template id="card">
       <div class="card">
         <div class="card__image">
@@ -236,27 +241,28 @@
            <!-- для того, чтобы добавить сообщение нужен класс card__message_activ-->
           <p class="card__message">Войдите, чтобы сохранять статьи</p>
           <p class="card__message card__message_about-news "></p>
-
         </div>
-        <div class="card__information">
-          <p class="card__data">
-          </p>
-          <div class="card__information_height">
-            <h3 class="card__title">
-            </h3>
-            <p class="card__text">
+        <a class="card__link"  href="" target="_blank">
+          <div class="card__information">
+            <p class="card__data">
+            </p>
+            <div class="card__information_height">
+              <h3 class="card__title">
+              </h3>
+              <p class="card__text">
+              </p>
+            </div>
+            <p class="card__source">
             </p>
           </div>
-          <a class="card__source" href="" target="_blank">
-          </a>
-        </div>
+      </a>
       </div>
     </template>
 
 
   </div>
 
-  <script src="main.2ced58a381a75f75e3ae.js"></script>
+  <script src="main.cc80e7edc4740decafb3.js"></script>
 
 </body>
 </html>
