@@ -1,44 +1,39 @@
+/* eslint-disable max-len */
 /* eslint-disable no-undef */
-import NewsCard from "./NewsCard";
+import formatDateCard from '../utils/formatDateCard';
 
 export default class PlaceCard {
-  constructor(array) {
+  constructor(addNewsCard) {
     this.container = document.querySelector('.place-card');
-    this.array = array;
-    this.renderNewsCard(array);
+    this.addNewsCard = addNewsCard;
   }
 
-  addNewsCard(title, data, text, image, source) {
-    const { createElement } = new NewsCard(title, data, text, image, source);
-    this.container.appendChild(createElement);
-
+  renderSavedNewsCard(array) {
+    for (let i = 0; i < array.length; i += 1) {
+      const arr = array;
+      this.addNewsCard(arr[i].title, arr[i].date, arr[i].text, arr[i].image, arr[i].source, arr[i].link, arr[i].keyword, arr[i]._id, this.container);
+    }
   }
 
-  renderNewsCard() {
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < this.array.length; i++) {
-      const arr = this.array;
-      this.addNewsCard(arr[i].title, arr[i].publishedAt, arr[i].description, arr[i].urlToImage, arr[i].source);
+  renederNewsCardThree(array, summa, rend, formValue) {
+    let i = summa; // значение из счетчика
+    const render = rend; // значение из счетчика
+    if (render > array.length) {
+      for (i; i < array.length; i += 1) {
+        const arr = array; // массив из запроса
+        this.addNewsCard(arr[i].title, formatDateCard(arr[i].publishedAt), arr[i].description, arr[i].urlToImage, arr[i].source.name, arr[i].url, formValue, null, this.container);
+      }
+    } else {
+      for (i; i < render; i += 1) {
+        const arr = array;
+        this.addNewsCard(arr[i].title, formatDateCard(arr[i].publishedAt), arr[i].description, arr[i].urlToImage, arr[i].source.name, arr[i].url, formValue, null, this.container);
+      }
+    }
+  }
+
+  clearContent() {
+    while (this.container.firstChild) {
+      this.container.removeChild(this.container.firstChild);
     }
   }
 }
-
-
-/*
-class CardList {
-  constructor (container, array) {
-    this.container = container;
-    this.array = array;
-    this.render(array);
-  }
-  addCard (image, text, somelike, ownerId, cardId, likeId) {
-    const {cardElement} = new Card(image, text, somelike, ownerId, cardId, likeId);
-    this.container.appendChild(cardElement);
-  }
-  render () {
-    for (let i = 0; i < this.array.length; i++) {
-      this.addCard(this.array[i].link, this.array[i].name, this.array[i].likes.length, this.array[i].owner._id, this.array[i]._id, this.array[i].likes.some(like => like._id === '82687fb710a7a00db742a691'));
-    }
-  }
-}
-*/

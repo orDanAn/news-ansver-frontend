@@ -9,6 +9,7 @@
   line-height: 24px;
   display:flex;
   z-index: 1;
+  display: none;
 }
 
 @media screen and (max-width: 770px) {

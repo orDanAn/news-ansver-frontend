@@ -1,3 +1,5 @@
+@import url('./_activ/menu-mobile__link_activ.css');
+
 .menu-mobile__link {
 
   font-family: Roboto, 'Times New Roman', Times, serif;
@@ -8,5 +10,6 @@
   color: #FFFFFF;
   margin: 0 0 0 16px;
   text-decoration: none;
+  display: none;
 
 }

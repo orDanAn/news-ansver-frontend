@@ -1,11 +1,10 @@
 /* eslint-disable no-undef */
-
 export default class MainApi {
   constructor(options) {
     this.options = options;
   }
 
-  signup(email, password, name, form) {
+  signup(email, password, name) {
     return fetch(`${this.options.baseUrl}/signup`, {
       credentials: 'include',
       method: 'POST',
@@ -24,11 +23,11 @@ export default class MainApi {
         }
         return Promise.reject(res.json()); // посмотреть как обробатывать ошибки в fetch
       })
-      .catch((err) => err.then((res) => (form.setServerError(res.message))));
+      .catch((err) => err);
   }
 
   // eslint-disable-next-line class-methods-use-this
-  signin(email, password, form) {
+  signin(email, password) {
     return fetch(`${this.options.baseUrl}/signin`, {
       credentials: 'include',
       method: 'POST',
@@ -46,7 +45,7 @@ export default class MainApi {
         }
         return Promise.reject(res.json()); // посмотреть как обробатывать ошибки в fetch
       })
-      .catch((err) => err.then((res) => (form.setServerError(res.message))));
+      .catch((err) => err);
   }
 
   logout() {
@@ -57,17 +56,9 @@ export default class MainApi {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(res.json()); // посмотреть как обробатывать ошибки в fetch
+        return Promise.reject(res.json());
       })
-      .catch((err) => err)
-      .then((error) => {
-        if (error) {
-          console.log(error.message);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => console.log(err));
   }
 
   getUserData() {
@@ -81,19 +72,8 @@ export default class MainApi {
         }
         return Promise.reject(res.json());
       })
-      .then((result) => {
-        // загрузка данных пользователя
-        console.log(result);
-      })
-      .catch((err) => err)
-      .then((error) => {
-        if (error) {
-          console.log(error.message);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      .then((result) => result)
+      .catch((err) => err.then((res) => console.error(res.message)));
   }
 
   getArticles() {
@@ -107,19 +87,8 @@ export default class MainApi {
         }
         return Promise.reject(res.json());
       })
-      .then((result) => {
-        // загрузка данных пользователя статьи
-        console.log(result);
-      })
-      .catch((err) => err)
-      .then((error) => {
-        if (error) {
-          console.log(error.message);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      .then((result) => (result.article))
+      .catch((err) => err.then((res) => console.error({ res })));
   }
 
   createArticle(keyword, title, text, date, source, link, image) {
@@ -145,18 +114,8 @@ export default class MainApi {
         }
         return Promise.reject(res.json()); // посмотреть как обробатывать ошибки в fetch
       })
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((err) => err)
-      .then((error) => {
-        if (error) {
-          console.log(error.message);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      .then((result) => result)
+      .catch((err) => err.then((res) => console.error({ res })));
   }
 
   removeArticle(idArticle) {
@@ -173,17 +132,7 @@ export default class MainApi {
         }
         return Promise.reject(res.json()); // посмотреть как обробатывать ошибки в fetch
       })
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((err) => err)
-      .then((error) => {
-        if (error) {
-          console.log(error.message);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      .then((result) => (result))
+      .catch((err) => err.then((res) => console.error({ res })));
   }
 }

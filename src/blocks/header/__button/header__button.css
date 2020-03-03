@@ -1,5 +1,6 @@
 @import url('./_black/header__button_black.css');
 @import url('./_activ/header__button_activ.css');
+@import url('./__text/header-button__text.css');
 
 .header__button{
     border: 1px solid #FFFFFF;
