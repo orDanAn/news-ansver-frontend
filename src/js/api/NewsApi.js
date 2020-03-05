@@ -4,20 +4,19 @@ export default class NewsApi {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  getNews(url) {
+  getNews(url, keyAuthorization) {
     // eslint-disable-next-line no-undef
     return fetch(url, {
       headers: {
-        authorization: '881473579aaa43939fa0c60606e02301',
+        authorization: keyAuthorization,
       },
     })
       .then((res) => {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(res.json()); // посмотреть как обробатывать ошибки в fetch
+        return Promise.reject(res.json());
       })
-      .then((res) => res.articles)
-      .catch((err) => console.error(err));
+      .then((res) => res.articles);
   }
 }

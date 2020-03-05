@@ -8,25 +8,52 @@ export default class PlaceCard {
     this.addNewsCard = addNewsCard;
   }
 
-  renderSavedNewsCard(array) {
-    for (let i = 0; i < array.length; i += 1) {
-      const arr = array;
-      this.addNewsCard(arr[i].title, arr[i].date, arr[i].text, arr[i].image, arr[i].source, arr[i].link, arr[i].keyword, arr[i]._id, this.container);
+  renderSavedNewsCard(cards) {
+    for (let i = 0; i < cards.length; i += 1) {
+      this.addNewsCard({
+        title: cards[i].title,
+        data: cards[i].date,
+        text: cards[i].text,
+        image: cards[i].image,
+        source: cards[i].source,
+        link: cards[i].link,
+        keyword: cards[i].keyword,
+        idCard: cards[i]._id,
+        container: this.container,
+      });
     }
   }
 
-  renederNewsCardThree(array, summa, rend, formValue) {
+  renederNewsCardThree(cards, summa, rend, formValue) {
     let i = summa; // значение из счетчика
     const render = rend; // значение из счетчика
-    if (render > array.length) {
-      for (i; i < array.length; i += 1) {
-        const arr = array; // массив из запроса
-        this.addNewsCard(arr[i].title, formatDateCard(arr[i].publishedAt), arr[i].description, arr[i].urlToImage, arr[i].source.name, arr[i].url, formValue, null, this.container);
+    if (render > cards.length) {
+      for (i; i < cards.length; i += 1) {
+        this.addNewsCard({
+          title: cards[i].title,
+          data: formatDateCard(cards[i].publishedAt),
+          text: cards[i].description,
+          image: cards[i].urlToImage,
+          source: cards[i].source.name,
+          link: cards[i].url,
+          keyword: formValue,
+          idCard: null,
+          container: this.container,
+        });
       }
     } else {
       for (i; i < render; i += 1) {
-        const arr = array;
-        this.addNewsCard(arr[i].title, formatDateCard(arr[i].publishedAt), arr[i].description, arr[i].urlToImage, arr[i].source.name, arr[i].url, formValue, null, this.container);
+        this.addNewsCard({
+          title: cards[i].title,
+          data: formatDateCard(cards[i].publishedAt),
+          text: cards[i].description,
+          image: cards[i].urlToImage,
+          source: cards[i].source.name,
+          link: cards[i].url,
+          keyword: formValue,
+          idCard: null,
+          container: this.container,
+        });
       }
     }
   }

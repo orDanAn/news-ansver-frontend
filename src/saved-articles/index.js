@@ -14,7 +14,9 @@ import {
 } from '../js/constants/variables';
 
 
-api.getArticles().then((res) => { placeCard.renderSavedNewsCard(res); console.log(res[1]._id); });
+api.getArticles()
+  .then((articles) => { placeCard.renderSavedNewsCard(articles); })
+  .catch((err) => console.error(err.message));
 
 mainSaved.renderMainSavedTitle();
 mainSaved.renderMainSavedTextNomber();

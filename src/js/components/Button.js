@@ -3,6 +3,7 @@
 import {
   newsApi, placeCard, notFound, api, searchErrorMessage, inputErrorMessage,
 } from '../constants/variables';
+import { keysNewsApi } from '../constants/keys';
 import url from '../utils/url';
 import formatDate from '../utils/formatDate';
 import addError from '../utils/addError';
@@ -31,44 +32,46 @@ export default class Button {
         return;
       }
       // запрос к API News
-      newsApi.getNews(getUrl).then((res) => {
-        if (res) {
-          const showMore = function showMoreCounter() {
-            summa += 3;
-            rend += 3;
-            placeCard.renederNewsCardThree(res, summa, rend, formValue);
-            if (res.length < rend || res.length === rend) {
-              buttonNext.classList.remove('result-search__button_activ');
+      newsApi.getNews(getUrl, keysNewsApi)
+        .then((news) => {
+          if (news) {
+            const showMore = function showMoreCounter() {
+              summa += 3;
+              rend += 3;
+              placeCard.renederNewsCardThree(news, summa, rend, formValue);
+              if (news.length < rend || news.length === rend) {
+                buttonNext.classList.remove('result-search__button_activ');
+              }
+            };
+            if (news.length > 0) { // если пришел массив больше нуля рисуем первые три карточки
+              placeCard.renederNewsCardThree(news, summa, rend, formValue);
+              title.classList.add('result-search__title_activ');
+            } else {
+              notFound.createNotFound(); // иначе ничего не найдено
             }
-          };
-          if (res.length > 0) { // если пришел массив больше нуля рисуем первые три карточки
-            placeCard.renederNewsCardThree(res, summa, rend, formValue);
-            title.classList.add('result-search__title_activ');
-          } else {
-            notFound.createNotFound(); // иначе ничего не найдено
+            if (news.length > 3) {
+              buttonNext.addEventListener('click', showMore);
+              this.button.addEventListener('click', () => {
+                buttonNext.removeEventListener('click', showMore);
+              });
+              buttonNext.classList.add('result-search__button_activ'); // если массив больше трех, рисуем кнопку показать еще
+            }
           }
-          if (res.length > 3) {
-            buttonNext.addEventListener('click', showMore);
-            this.button.addEventListener('click', () => {
-              buttonNext.removeEventListener('click', showMore);
-            });
-            buttonNext.classList.add('result-search__button_activ'); // если массив больше трех, рисуем кнопку показать еще
-          }
-        } else {
-          addError(this.container, searchErrorMessage); // добавляем ошибку API
-        }
-      });
+        })
+        .catch(() => { addError(this.container, searchErrorMessage); });
     });
   }
 
   logOutButton() {
     this.button.addEventListener('click', (event) => {
       event.preventDefault();
-      api.logout().then((res) => {
-        if (res) {
-          document.location.href = './';
-        }
-      });
+      api.logout()
+        .then((res) => {
+          if (res) {
+            document.location.href = './';
+          }
+        })
+        .catch((err) => console.error(err));
     });
   }
 

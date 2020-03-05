@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-undef */
 /* eslint-disable import/no-cycle */
@@ -5,8 +6,8 @@ import { api, mainSaved } from '../constants/variables';
 
 
 export default class NewsCard {
-  constructor(title, data, text, image, source, link, keyword, idCard) {
-    this.card = document.getElementById('card');
+  constructor({ title, data, text, image, source, link, keyword, idCard }) {
+    this.card = document.querySelector('#card');
     this.newsCard = this.card.content.cloneNode(true);
     this.savedCard = this.newsCard.querySelector('.card');
     this.titleCard = this.newsCard.querySelector('.card__title');
@@ -18,7 +19,7 @@ export default class NewsCard {
     this.aboutNews = this.newsCard.querySelector('.card__message_about-news');
     this.placeCard = document.querySelector('.place-card');
     // eslint-disable-next-line max-len
-    this.createElement = this.createNewsCard(title, data, text, image, source, link, keyword, idCard);
+    this.createElement = this.createNewsCard({ title, publishedAt: data, description: text, urlToImage: image, source, link, keyword, idCard });
 
     this.placeCard.addEventListener('click', this.saveCard);
     this.placeCard.addEventListener('click', this.removeCard);
@@ -26,7 +27,7 @@ export default class NewsCard {
     this.placeCard.addEventListener('mouseover', this.saveCardMessage);
   }
 
-  createNewsCard(title, publishedAt, description, urlToImage, source, link, keyword, idCard) {
+  createNewsCard({ title, publishedAt, description, urlToImage, source, link, keyword, idCard }) {
     const { newsCard } = this;
 
     this.titleCard.textContent = title;
@@ -60,7 +61,8 @@ export default class NewsCard {
               buttonSave.classList.add('card__save-icon_saved');
               card.setAttribute('idCard', res.article._id);
             }
-          });
+          })
+          .catch((err) => console.error(err.message));
       }
     }
   }
@@ -72,7 +74,9 @@ export default class NewsCard {
       const buttonSave = card.querySelector('.card__save-icon');
       const placeCard = document.querySelector('.place-card');
       if (event.target.closest('.card__save-icon_saved')) {
-        api.removeArticle(card.getAttribute('idCard')).then((res) => { if (res) { if (buttonSave) { buttonSave.classList.remove('card__save-icon_saved'); } } });
+        api.removeArticle(card.getAttribute('idCard'))
+          .then((res) => { if (res) { if (buttonSave) { buttonSave.classList.remove('card__save-icon_saved'); } } })
+          .catch((err) => console.error(err.message));
       }
       if (event.target.closest('.card__del-icon')) {
         api.removeArticle(card.getAttribute('idCard'))
@@ -82,7 +86,8 @@ export default class NewsCard {
               mainSaved.renderMainSavedTextInformation();
               mainSaved.renderMainSavedTextNomber();
             }
-          });
+          })
+          .catch((err) => console.error(err.message));
       }
     }
   }
@@ -104,7 +109,8 @@ export default class NewsCard {
       const card = event.target.closest('.card');
       const cardMessage = card.querySelector('.card__message');
       if (event.target.closest('.card__save-icon')) {
-        api.getUserData().then((res) => { if (!res) { cardMessage.classList.add('card__message_activ'); } });
+        api.getUserData()
+          .catch(() => cardMessage.classList.add('card__message_activ'));
       }
     }
   }

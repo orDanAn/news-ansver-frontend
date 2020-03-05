@@ -10,46 +10,52 @@ export default class MainSaved {
   }
 
   renderMainSavedTitle() {
-    api.getUserData().then((res) => {
-      if (res) {
-        this.name.textContent = res.name;
-      }
-    });
+    api.getUserData()
+      .then((res) => {
+        if (res) {
+          this.name.textContent = res.name;
+        }
+      })
+      .catch((err) => console.error(err.message));
   }
 
   renderMainSavedTextNomber() {
-    api.getArticles().then((res) => {
-      this.nomber.textContent = res.length;
-    });
+    api.getArticles()
+      .then((articles) => {
+        this.nomber.textContent = articles.length;
+      })
+      .catch((err) => console.error(err.message));
   }
 
   // eslint-disable-next-line class-methods-use-this
   renderMainSavedTextInformation() {
-    api.getArticles().then((res) => {
-      const arr = [];
+    api.getArticles()
+      .then((articles) => {
+        const keyWords = [];
 
-      // сделали массив с keyword
-      res.forEach((item) => {
-        arr.push(item.keyword);
-      });
+        // сделали массив с keyword
+        articles.forEach((item) => {
+          keyWords.push(item.keyword);
+        });
 
-      const arrUnig = sortArr(arr);
+        const unigkeyWords = sortArr(keyWords);
 
-      if (arrUnig.length < 1) {
-        this.infomation.textContent = 'у вас нет сохраненных статей';
-      }
-      if (arrUnig.length > 0 && arrUnig.length < 2) {
-        this.infomation.textContent = `${arrUnig[0]}`;
-      }
-      if (arrUnig.length > 1 && arrUnig.length < 3) {
-        this.infomation.textContent = `${arrUnig[0]}, ${arrUnig[1]}`;
-      }
-      if (arrUnig.length > 2 && arrUnig.length < 4) {
-        this.infomation.textContent = `${arrUnig[0]}, ${arrUnig[1]} и ${arrUnig[2]}`;
-      }
-      if (arrUnig.length > 3) {
-        this.infomation.textContent = `${arrUnig[0]}, ${arrUnig[1]} и ${arrUnig.length - 2} другим`;
-      }
-    });
+        if (unigkeyWords.length < 1) {
+          this.infomation.textContent = 'у вас нет сохраненных статей';
+        }
+        if (unigkeyWords.length > 0 && unigkeyWords.length < 2) {
+          this.infomation.textContent = `${unigkeyWords[0]}`;
+        }
+        if (unigkeyWords.length > 1 && unigkeyWords.length < 3) {
+          this.infomation.textContent = `${unigkeyWords[0]}, ${unigkeyWords[1]}`;
+        }
+        if (unigkeyWords.length > 2 && unigkeyWords.length < 4) {
+          this.infomation.textContent = `${unigkeyWords[0]}, ${unigkeyWords[1]} и ${unigkeyWords[2]}`;
+        }
+        if (unigkeyWords.length > 3) {
+          this.infomation.textContent = `${unigkeyWords[0]}, ${unigkeyWords[1]} и ${unigkeyWords.length - 2} другим`;
+        }
+      })
+      .catch((err) => console.error(err.message));
   }
 }

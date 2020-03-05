@@ -17,13 +17,10 @@ export default class MainApi {
         name: `${name}`,
       }),
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(res.json()); // посмотреть как обробатывать ошибки в fetch
-      })
-      .catch((err) => err);
+      .then((res) => res.json()
+        .then((body) => (res.ok
+          ? Promise.resolve(body)
+          : Promise.reject(body))));
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -39,41 +36,30 @@ export default class MainApi {
         password: `${password}`,
       }),
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json;
-        }
-        return Promise.reject(res.json()); // посмотреть как обробатывать ошибки в fetch
-      })
-      .catch((err) => err);
+      .then((res) => res.json()
+        .then((body) => (res.ok
+          ? Promise.resolve(body)
+          : Promise.reject(body))));
   }
 
   logout() {
     return fetch(`${this.options.baseUrl}/users/logout`, {
       credentials: 'include',
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(res.json());
-      })
-      .catch((err) => console.log(err));
+      .then((res) => res.json()
+        .then((body) => (res.ok
+          ? Promise.resolve(body)
+          : Promise.reject(body))));
   }
 
   getUserData() {
     return fetch(`${this.options.baseUrl}/users/me`, {
       credentials: 'include',
     })
-
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(res.json());
-      })
-      .then((result) => result)
-      .catch((err) => err.then((res) => console.error(res.message)));
+      .then((res) => res.json()
+        .then((body) => (res.ok
+          ? Promise.resolve(body)
+          : Promise.reject(body))));
   }
 
   getArticles() {
@@ -81,14 +67,11 @@ export default class MainApi {
       credentials: 'include',
     })
 
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(res.json());
-      })
-      .then((result) => (result.article))
-      .catch((err) => err.then((res) => console.error({ res })));
+      .then((res) => res.json()
+        .then((body) => (res.ok
+          ? Promise.resolve(body)
+          : Promise.reject(body))))
+      .then((result) => (result.article));
   }
 
   createArticle(keyword, title, text, date, source, link, image) {
@@ -108,14 +91,11 @@ export default class MainApi {
         image: `${image}`,
       }),
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(res.json()); // посмотреть как обробатывать ошибки в fetch
-      })
-      .then((result) => result)
-      .catch((err) => err.then((res) => console.error({ res })));
+      .then((res) => res.json()
+        .then((body) => (res.ok
+          ? Promise.resolve(body)
+          : Promise.reject(body))))
+      .then((result) => result);
   }
 
   removeArticle(idArticle) {
@@ -126,13 +106,10 @@ export default class MainApi {
         'Content-Type': 'application/json',
       },
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(res.json()); // посмотреть как обробатывать ошибки в fetch
-      })
-      .then((result) => (result))
-      .catch((err) => err.then((res) => console.error({ res })));
+      .then((res) => res.json()
+        .then((body) => (res.ok
+          ? Promise.resolve(body)
+          : Promise.reject(body))))
+      .then((result) => (result));
   }
 }

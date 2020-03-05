@@ -62,24 +62,20 @@ popup.addEventListener('click', (event) => {
     api.signin(document.forms[1].elements[0].value, document.forms[1].elements[1].value, form)
       .then((res) => {
         if (res) {
-          if ('message' in res) {
-            form.setServerError(res.message);
-          } else {
-            popup.classList.remove('popup_is-opened'); formAuth.clearContent(); header.start(); headerMobile.startMobile();
-          }
+          popup.classList.remove('popup_is-opened'); formAuth.clearContent(); header.start(); headerMobile.startMobile();
         }
-      });
+      })
+      .catch((err) => form.setServerError(err.message));
   }
   if (event.target.getAttribute('id') === 'button-formSingUp') {
     event.preventDefault();
     api.signup(document.forms[1].elements[0].value, document.forms[1].elements[1].value, document.forms[1].elements[2].value, form)
       .then((res) => {
         if (res) {
-          if ('message' in res) {
-            form.setServerError(res.message);
-          } else { formSignUp.clearContent(); formEnter.open(); }
+          formSignUp.clearContent(); formEnter.open();
         }
-      });
+      })
+      .catch((err) => form.setServerError(err.message));
   }
   if (event.target.getAttribute('id') === 'enter') {
     formEnter.clearContent();

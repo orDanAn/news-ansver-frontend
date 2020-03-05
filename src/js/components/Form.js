@@ -33,11 +33,11 @@ export default class Form {
   }
 
   _contentErrorMessage() {
-    const errorEmailAuth = document.getElementById('formAuth-error-email');
-    const errorPasswordAuth = document.getElementById('formAuth-error-password');
-    const errorEmailSingUp = document.getElementById('formSingUp-error-email');
-    const errorPasswordSingUp = document.getElementById('formSingUp-error-password');
-    const errorNameSingUp = document.getElementById('formSingUp-error-name');
+    const errorEmailAuth = document.querySelector('#formAuth-error-email');
+    const errorPasswordAuth = document.querySelector('#formAuth-error-password');
+    const errorEmailSingUp = document.querySelector('#formSingUp-error-email');
+    const errorPasswordSingUp = document.querySelector('#formSingUp-error-password');
+    const errorNameSingUp = document.querySelector('#formSingUp-error-name');
 
 
     if (Array.from(this.forms).includes(this.forms.namedItem('formAuth'))) {
@@ -64,13 +64,13 @@ export default class Form {
   _validateForm() {
     const formAuth = this.forms.namedItem('formAuth');
     const formSingUp = this.forms.namedItem('formSingUp');
-    const errorEmailAuth = document.getElementById('formAuth-error-email');
-    const errorPasswordAuth = document.getElementById('formAuth-error-password');
-    const errorEmailSingUp = document.getElementById('formSingUp-error-email');
-    const errorPasswordSingUp = document.getElementById('formSingUp-error-password');
-    const errorNameSingUp = document.getElementById('formSingUp-error-name');
-    const buttonFormAuth = document.getElementById('button-formAuth');
-    const buttonFormSingUp = document.getElementById('button-formSingUp');
+    const errorEmailAuth = document.querySelector('#formAuth-error-email');
+    const errorPasswordAuth = document.querySelector('#formAuth-error-password');
+    const errorEmailSingUp = document.querySelector('#formSingUp-error-email');
+    const errorPasswordSingUp = document.querySelector('#formSingUp-error-password');
+    const errorNameSingUp = document.querySelector('#formSingUp-error-name');
+    const buttonFormAuth = document.querySelector('#button-formAuth');
+    const buttonFormSingUp = document.querySelector('#button-formSingUp');
 
 
     if (Array.from(this.forms).includes(formAuth)) {
@@ -93,8 +93,8 @@ export default class Form {
   }
 
   setServerError(errorServer) {
-    const formAuthErrorUpButton = document.getElementById('formAuth-error-up-button');
-    const formSingUpErrorUpButton = document.getElementById('formSingUp-error-up-button');
+    const formAuthErrorUpButton = document.querySelector('#formAuth-error-up-button');
+    const formSingUpErrorUpButton = document.querySelector('#formSingUp-error-up-button');
     if (Array.from(this.forms).includes(this.forms.namedItem('formAuth'))) {
       formAuthErrorUpButton.textContent = errorServer;
     }
