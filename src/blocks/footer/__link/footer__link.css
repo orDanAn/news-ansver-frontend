@@ -1,5 +1,5 @@
 .footer__link {
-    font-family: Roboto, Times;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -7,8 +7,13 @@
     text-align: center;
     color: #1A1B22;
     text-decoration: none;
-    margin-left: 35px;
+    margin-left: 45px;
     cursor: pointer;
+    display: block;
+}
+
+.footer__link:hover {
+  transform: scale(1.1, 1.1);
 }
 
 @media screen and (max-width: 685px) {

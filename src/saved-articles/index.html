@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Узнай новости</title>
-  <link rel="icon" sizes="32x32" href="<%=require('../image/favicon.png').default%>">
-  <link rel= "stylesheet" href= "<%=htmlWebpackPlugin.files.chunks.main.css %>">
+  <link rel="icon" sizes="32x32" href="../<%=require('../image/favicon.png').default%>">
+  <link rel= "stylesheet" href= "<%=htmlWebpackPlugin.files.chunks.second.css %>">
   <meta name="Keywords" content="новости, наука, природа, новинки, события">
   <meta name="author" content="Орлов Данил">
   <meta name="description" content="Страница, чтобы узнать последние новости со всего мира">
@@ -22,13 +22,13 @@
         <a class="header__link header__link_black header__link_activ" href="./index.html">
           Главная
         </a>
-        <a class="header__link header__link_black header__link_underline-black header__link_activ" href="./second.html">
+        <a class="header__link header__link_black header__link_underline-black header__link_activ" href="./second">
           Сохранённые статьи
         </a>
         <!--нужна ли анимация?-->
         <button class="header__button header__button_black header__button_activ" id="logOutButton">
           <span class="header-button__text">ssss</span>
-          <img class="button-image" src="<%=require('../image/logout_black.png').default%>" alt="иконка входа">
+          <img class="button-image" src="../<%=require('../image/logout_black.png').default%>" alt="иконка входа">
         </button>
         <button class="button-menu button-menu_black" id="buttonMenu">
 
@@ -57,41 +57,57 @@
         &#169; 2019. Orlov Danil
       </p>
       <nav class="footer__nav">
-       <!-- ссылка должна вести на главную страницу-->
-        <a class="footer__link" href="./index.html">
+      <!-- ссылка должна вести на главную страницу-->
+        <li class="footer__li">
+          <a class="footer__link" href="./index.html">
           Главная
-        </a>
-        <a class="footer__link" target="_blank" href="https://praktikum.yandex.ru/">
-          Яндекс.Практикум
-        </a>
+          </a>
+        </li>
+        <li class="footer__li">
+          <a class="footer__link" target="_blank" href="https://praktikum.yandex.ru/">
+            Яндекс.Практикум
+          </a>
+        </li>
       </nav>
       <nav class="footer__nav_icon">
-        <a class="footer__link_icon" target="_blank" href="https://github.com/orDanAn">
-          <img alt="переход на github.com" src="<%=require('../image/github.png').default%>">
-        </a>
-        <a class="footer__link_icon" target="_blank" href="https://www.facebook.com/profile.php?id=100011316277801">
-          <img alt="переход на facebook.com" src="<%=require('../image/iconmonstr-facebook-6.png').default%>">
-        </a>
+        <li class="footer__li">
+          <a class="footer__link_icon" target="_blank" href="https://github.com/orDanAn">
+            <img alt="переход на github.com" src="../<%=require('../image/github.png').default%>">
+          </a>
+        </li>
+        <li class="footer__li">
+          <a class="footer__link_icon" target="_blank" href="https://www.facebook.com/profile.php?id=100011316277801">
+            <img alt="переход на facebook.com" src="../<%=require('../image/iconmonstr-facebook-6.png').default%>">
+          </a>
+        </li>
       </nav>
     </footer>
     <footer class="footer_mobile">
       <div class="footer__mobile-nav">
         <nav class="footer__nav">
-        <!-- ссылка должна вести на главную страницу-->
-          <a class="footer__link" href="./index.html">
-            Главная
-          </a>
-          <a class="footer__link" target="_blank" href="https://praktikum.yandex.ru/">
-            Яндекс.Практикум
-          </a>
+          <li class="footer__li">
+            <!-- ссылка должна вести на главную страницу-->
+            <a class="footer__link" href="./index.html">
+              Главная
+            </a>
+          </li>
+          <li class="footer__li">
+            <a class="footer__link" target="_blank" href="https://praktikum.yandex.ru/">
+              Яндекс.Практикум
+            </a>
+          </li>
         </nav>
         <nav class="footer__nav_icon">
-          <a class="footer__link_icon" target="_blank" href="https://github.com/orDanAn">
-            <img alt="переход на github.com" src="<%=require('../image/github.png').default%>">
-          </a>
-          <a class="footer__link_icon" target="_blank" href="https://www.facebook.com/profile.php?id=100011316277801">
-            <img alt="переход на facebook.com" src="<%=require('../image/iconmonstr-facebook-6.png').default%>">
-          </a>
+          <li class="footer__li">
+            <a class="footer__link_icon" target="_blank" href="https://github.com/orDanAn">
+              <img alt="переход на github.com" src="../<%=require('../image/github.png').default%>">
+            </a>
+          </li>
+          <li class="footer__li">
+            <a class="footer__link_icon" target="_blank" href="https://www.facebook.com/profile.php?id=100011316277801">
+              <img alt="переход на facebook.com" src="../<%=require('../image/iconmonstr-facebook-6.png').default%>">
+            </a>
+          </li>
         </nav>
       </div>
       <p class="name-author">
@@ -123,7 +139,7 @@
           </button>
           <button class="menu-mobile__button" id="logOutButton-mobile">
             <span class="header-button__text">ssss</span>
-            <img class="button-image" src="<%=require('../image/logout.svg').default%>" alt="иконка входа">
+            <img class="button-image" src="../<%=require('../image/logout.svg').default%>" alt="иконка входа">
           </button>
         </div>
       </div>

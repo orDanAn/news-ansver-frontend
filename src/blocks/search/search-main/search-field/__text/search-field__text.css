@@ -1,9 +1,9 @@
 .search-field__text {
-    font-family: Roboto, 'Times New Roman', Times, serif;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
-    line-height: 22px;
+    line-height: 60px;
     border: none;
     backdrop-filter: blur(8px);
     border-radius: 100px;
@@ -11,6 +11,11 @@
     padding-left: 24px;
     outline: none;
     caret-color: #2F71E5;
+}
+
+.search-field__text:focus {
+  box-shadow: 0 0 0 2px #2F71E5;
+
 }
 
 

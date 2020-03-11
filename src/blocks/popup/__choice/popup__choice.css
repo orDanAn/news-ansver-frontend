@@ -1,6 +1,6 @@
 @import url('./_color-blue/popup__choice_color-blue.css');
 .popup__choice {
-    font-family: Inter;
+    font-family: Inter, Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;

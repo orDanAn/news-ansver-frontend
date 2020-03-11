@@ -4,7 +4,7 @@
 @import url('./_activ/header__link_activ.css');
 
 .header__link {
-    font-family: Roboto, Times;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -14,6 +14,10 @@
     text-decoration: none;
     cursor: pointer;
     display: none;
+}
+
+.header__link:hover {
+  transform: scale(1.1, 1.1);
 }
 
 @media screen and (max-width: 770px) {

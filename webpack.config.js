@@ -13,7 +13,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js',
+    filename: '[name]/[name].[chunkhash].js',
   },
   module: {
     rules: [
@@ -54,7 +54,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css',
+      filename: '[name]/[name].[contenthash].css',
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -70,14 +70,14 @@ module.exports = {
       inject: false, // стили НЕ нужно прописывать внутри тегов
       // hash: true, // для страницы нужно считать хеш
       template: './src/index.html', // откуда брать образец для сравнения с текущим видом проекта
-      filename: 'index.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
+      filename: './index.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
     }),
     new HtmlWebpackPlugin({
       // Означает, что:
       inject: false, // стили НЕ нужно прописывать внутри тегов
       // hash: true, // для страницы нужно считать хеш
       template: './src/saved-articles/index.html', // откуда брать образец для сравнения с текущим видом проекта
-      filename: 'second.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
+      filename: './second/index.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
     }),
     new WebpackMd5Hash(),
   ],

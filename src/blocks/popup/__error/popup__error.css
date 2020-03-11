@@ -1,7 +1,7 @@
 @import url('./_up-button/popup__error_up-button.css');
 
 .popup__error {
-    font-family: Inter, Times;
+    font-family: Inter, Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
