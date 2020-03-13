@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Узнай новости</title>
   <link rel="icon" sizes="32x32" href="./images/favicon.png">
-  <link rel= "stylesheet" href= "main/main.f370a5f55b863010486d.css">
+  <link rel= "stylesheet" href= "main/main.e41f760e88a7ef84993c.css">
   <meta name="Keywords" content="новости, наука, природа, новинки, события">
   <meta name="author" content="Орлов Данил">
   <meta name="description" content="Страница, чтобы узнать последние новости со всего мира">
@@ -82,16 +82,22 @@
       </button>
     </section>
     <section class="about-author">
-      <img class="about-author__foto" src="./images/image-03.png" alt="фото автора проекта">
+      <picture>
+        <source media="(min-width: 930px)" srcset="./images/foto-max.jpg">
+        <source media="(min-width: 770px)" srcset="./images/foto-min.jpg">
+        <source media="(min-width: 509px)" srcset="./images/foto-medium.jpg">
+        <img class="about-author__foto" src="./images/foto-max.jpg" alt="фото автора проекта">
+        </picture>
+
+
+
       <div class="about-author__text">
         <h2 class="about-author__title">
           Об авторе
         </h2>
         <p class="about-author__paragraph">
-          Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.
-          <br>
-          <br>
-          Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.
+          Умею собирать сайт по макету, пользуясь языками HTML, CSS и JavaScript. Понимаю процессы, сопутствующие созданию сайта и его публикации в сети. Могу включиться в совместную работу через Git и умею настраивать сборку проекта инструментом Webpack.
+          Также разбираюсь в устройстве более сложных сайтов с базами данных, могу создать API и управлять логикой взаимодействия с сервером. Изучал дополнительные технологии веб-разработчика: Node.js, SQL.
         </p>
       </div>
     </section>
@@ -101,46 +107,21 @@
       </p>
       <nav class="footer__nav">
        <!-- ссылка должна вести на главную страницу-->
-        <li class="footer__li">
-          <a class="footer__link" href="./index.html">
-          Главная
-          </a>
-        </li>
-        <li class="footer__li">
-          <a class="footer__link" target="_blank" href="https://praktikum.yandex.ru/">
-          Яндекс.Практикум
-          </a>
-        </li>
+        <ul class="footer__ul">
+          <li class="footer__li">
+            <a class="footer__link" href="./index.html">
+            Главная
+            </a>
+          </li>
+          <li class="footer__li">
+            <a class="footer__link" target="_blank" href="https://praktikum.yandex.ru/">
+            Яндекс.Практикум
+            </a>
+          </li>
+        </ul>
       </nav>
       <nav class="footer__nav_icon">
-        <li class="footer__li">
-          <a class="footer__link_icon" target="_blank" href="https://github.com/orDanAn">
-            <img alt="переход на github.com" src="./images/github.png">
-          </a>
-        </li>
-        <li class="footer__li">
-          <a class="footer__link_icon" target="_blank" href="https://www.facebook.com/profile.php?id=100011316277801">
-            <img alt="переход на facebook.com" src="./images/iconmonstr-facebook-6.png">
-          </a>
-        </li>
-      </nav>
-    </footer>
-    <footer class="footer_mobile">
-      <div class="footer__mobile-nav">
-        <nav class="footer__nav">
-        <!-- ссылка должна вести на главную страницу-->
-        <li class="footer__li">
-          <a class="footer__link" href="./index.html">
-            Главная
-          </a>
-        </li>
-        <li class="footer__li">
-          <a class="footer__link" target="_blank" href="https://praktikum.yandex.ru/">
-            Яндекс.Практикум
-          </a>
-        </li>
-        </nav>
-        <nav class="footer__nav_icon">
+        <ul class="footer__ul">
           <li class="footer__li">
             <a class="footer__link_icon" target="_blank" href="https://github.com/orDanAn">
               <img alt="переход на github.com" src="./images/github.png">
@@ -151,6 +132,42 @@
               <img alt="переход на facebook.com" src="./images/iconmonstr-facebook-6.png">
             </a>
           </li>
+        </ul>
+
+      </nav>
+    </footer>
+    <footer class="footer_mobile">
+      <div class="footer__mobile-nav">
+        <nav class="footer__nav">
+        <!-- ссылка должна вести на главную страницу-->
+        <ul class="footer__ul">
+          <li class="footer__li">
+            <a class="footer__link" href="./index.html">
+              Главная
+            </a>
+          </li>
+          <li class="footer__li">
+            <a class="footer__link" target="_blank" href="https://praktikum.yandex.ru/">
+              Яндекс.Практикум
+            </a>
+          </li>
+        </ul>
+
+        </nav>
+        <nav class="footer__nav_icon">
+          <ul class="footer__ul_icon">
+            <li class="footer__li">
+              <a class="footer__link_icon" target="_blank" href="https://github.com/orDanAn">
+                <img alt="переход на github.com" src="./images/github.png">
+              </a>
+            </li>
+            <li class="footer__li">
+              <a class="footer__link_icon" target="_blank" href="https://www.facebook.com/profile.php?id=100011316277801">
+                <img alt="переход на facebook.com" src="./images/iconmonstr-facebook-6.png">
+              </a>
+            </li>
+          </ul>
+
         </nav>
       </div>
       <p class="name-author">
@@ -226,11 +243,11 @@
           </header>
 
           <div class="menu-mobile__content">
-            <a class="menu-mobile__link menu-mobile__link_activ" href="./index.html">
+            <a class="menu-mobile__link menu-mobile__link_activ" href="./">
               Главная
             </a>
             <!--для активации добавить класс menu-mobile__link_activ-->
-            <a class="menu-mobile__link" id="saved-articles-mobile" href="./second.html">
+            <a class="menu-mobile__link" id="saved-articles-mobile" href="./second">
               Сохранённые статьи
             </a>
               <!--для активации добавить класс menu-mobile__button_activ-->
