@@ -79,7 +79,7 @@
   
 
   **Сайт находится по адресу <https://www.news-ansver.site/>**
-  API развернут на <https://www.api.news-ansver.site>
+  API развернут на <https://www.api.news-ansver.site> (<https://github.com/orDanAn/news-ansver-api>)
 
 
   
