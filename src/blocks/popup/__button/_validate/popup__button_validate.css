@@ -11,3 +11,7 @@
 .popup__button.popup__button_validate:active {
   background: #2A65CC;
 }
+
+.popup__button.popup__button_validate:focus {
+  background: #347EFF;
+}

@@ -25,6 +25,11 @@
     background: #2A65CC;
 }
 
+.search-field__button:focus {
+  background: #347EFF;
+}
+
+
 
 
 @media screen and (max-width: 770px) {

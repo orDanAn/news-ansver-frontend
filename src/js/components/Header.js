@@ -37,7 +37,7 @@ export default class Header {
       })
       .catch(() => {
         // eslint-disable-next-line no-undef
-        document.location.href = './';
+        document.location.href = '../';
       });
   }
 

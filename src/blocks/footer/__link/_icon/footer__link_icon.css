@@ -5,7 +5,7 @@
 }
 
 .footer__link_icon:hover {
-  transform: scale(1.1, 1.1);
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 685px) {

@@ -4,15 +4,15 @@
   margin-top: -14px;
 }
 
+
 @media screen and (max-width: 509px) {
   .popup__error.popup__error_up-button {
-    top: -85px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    max-height: 18px;
-  }
+
+    margin-top: 0px;
+    margin-left: 0px;
+    position: static;
 }
+  }
+
 
 

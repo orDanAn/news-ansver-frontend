@@ -4,6 +4,8 @@
 @import url('./_mobile/footer_mobile.css');
 @import url('./__nav/footer__nav.css');
 @import url('./__li/footer__li.css');
+@import url('./__ul/footer__ul.css');
+@import url('./__ul/_icon/footer__ul_icon.css');
 
 
 .footer {

@@ -5,6 +5,8 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const WebpackMd5Hash = require('webpack-md5-hash');
 
+const isDev = process.env.NODE_ENV === 'development';
+
 
 module.exports = {
   entry: {
@@ -18,13 +20,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
+          isDev ? { loader: 'style-loader' } : { loader: MiniCssExtractPlugin.loader, options: { publicPath: '../' } },
           'css-loader',
           'postcss-loader',
-
         ],
       },
       {
