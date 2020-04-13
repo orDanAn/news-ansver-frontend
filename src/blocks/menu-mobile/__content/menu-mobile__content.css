@@ -1,0 +1,5 @@
+.menu-mobile__content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 17px;
+}

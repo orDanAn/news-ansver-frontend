@@ -1,0 +1,23 @@
+.card__information_height {
+  display: flex;
+    flex-direction: column;
+    max-height: 205px;
+    /* text-overflow: ellipsis; */
+    overflow: hidden;
+}
+
+@media screen and (max-width: 770px) {
+  .card__information_height {
+    max-height: 185px;
+
+  }
+
+}
+
+@media screen and (max-width: 764px) {
+  .card__information_height {
+    max-height: 155px;
+
+  }
+
+}

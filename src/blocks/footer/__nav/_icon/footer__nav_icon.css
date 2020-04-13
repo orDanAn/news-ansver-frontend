@@ -1,0 +1,29 @@
+.footer__nav_icon {
+  padding-right: 106px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 950px) {
+  .footer__nav_icon {
+    padding-right: 40px;
+
+  }
+
+}
+
+@media screen and (max-width: 685px) {
+  .footer__nav_icon {
+    padding-right: 0;
+    display: flex;
+
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 67px
+
+
+  }
+
+}

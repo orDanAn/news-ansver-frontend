@@ -1,0 +1,7 @@
+.card__save-icon.card__save-icon_saved {
+  background-image: url('../../../../image/Group\ 12.png');
+}
+
+.card__save-icon.card__save-icon_saved:hover {
+  background-image: url('../../../../image/Group\ 12.png');
+}

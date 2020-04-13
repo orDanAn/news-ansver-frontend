@@ -1,0 +1,17 @@
+.footer__ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+
+@media screen and (max-width: 685px) {
+  .footer__ul {
+    flex-direction: column;
+    align-items: flex-start;
+
+
+
+  }
+
+}

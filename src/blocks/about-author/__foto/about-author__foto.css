@@ -1,0 +1,37 @@
+.about-author__foto {
+    border-radius: 1000px;
+    padding: 80px 56px 80px 104px;
+    width: 464px;
+    height: 464px;
+}
+
+
+
+
+@media screen and (max-width: 930px) {
+  .about-author__foto {
+    padding-left: 25px;
+
+  }
+
+}
+
+@media screen and (max-width: 770px) {
+  .about-author__foto {
+    width: 232px;
+    height: 232px;
+    padding: 60px 33px 55px 40px;
+
+  }
+
+}
+
+@media screen and (max-width: 509px) {
+  .about-author__foto {
+    width: 272px;
+    height: 272px;
+    padding: 32px 24px 0 24px;
+
+  }
+
+}

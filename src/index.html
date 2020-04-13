@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Узнай новости</title>
+  <link rel="icon" sizes="32x32" href="<%=require('./image/favicon.png').default%>">
+  <link rel= "stylesheet" href= "<%=htmlWebpackPlugin.files.chunks.main.css %>">
+  <meta name="Keywords" content="новости, наука, природа, новинки, события">
+  <meta name="author" content="Орлов Данил">
+  <meta name="description" content="Страница, чтобы узнать последние новости со всего мира">
+</head>
+<body>
+  <!--как должна себя вести страница на разрешение больше 1440px-->
+  <div class="page">
+    <section class="search">
+      <header class="header">
+        <h3 class="header__logo">
+          NewsExplorer
+        </h3>
+        <div class="header__menu">
+          <!--указать куда ведет ссылка, сделать подчеркивание-->
+          <a class="header__link header__link_underline header__link_activ" href="./">
+            Главная
+          </a>
+          <!-- header__link_activ -->
+          <a class="header__link" id="saved-articles" href="./second">
+            Сохранённые статьи
+          </a>
+          <!--для активации добавить класс header__button_activ-->
+          <button class="header__button" id="authButton">
+            Авторизоваться
+          </button>
+          <button class="header__button" id="logOutButton">
+            <span class="header-button__text">ssss</span>
+            <img class="button-image" src="<%=require('./image/logout.svg').default%>" alt="иконка выхода">
+          </button>
+          <button class="button-menu">
+          </button>
+        </div>
+      </header>
+      <div class="search-main">
+        <h1 class="search-main__title">
+          Что в мире <br>
+          творится?
+        </h1>
+        <p class="search-main__text">
+          Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.
+        </p>
+        <form class="search-field" >
+          <input class="search-field__text" type="text" placeholder="Введите тему новости" required>
+          <button class="search-field__button">
+            Искать
+          </button>
+          <p class="popup__error"></p>
+        </form>
+      </div>
+    </section>
+    <section class="result-search">
+    <template id="not-found">
+      <div class="not-found">
+          <img class="not-found__image" src="<%=require('./image/not-found_v1.png').default%>" alt="изображение грустного человека">
+          <h2 class="not-found__title">
+            Ничего не найдено
+          </h2>
+          <p class="not-found__text">
+            К сожалению по вашему запросу <br>
+            ничего не найдено.
+          </p>
+        </div>
+    </template>
+    <!-- для активации result-search__title_activ-->
+      <h2 class="result-search__title">
+        Результаты поиска
+      </h2>
+      <div class="place-card">
+      </div>
+      <!-- для активации result-search__button_activ -->
+      <button class="result-search__button">
+        Показать еще
+      </button>
+    </section>
+    <section class="about-author">
+      <picture>
+        <source media="(min-width: 930px)" srcset="<%=require('./image/foto-max.jpg').default%>">
+        <source media="(min-width: 770px)" srcset="<%=require('./image/foto-min.jpg').default%>">
+        <source media="(min-width: 509px)" srcset="<%=require('./image/foto-medium.jpg').default%>">
+        <img class="about-author__foto" src="<%=require('./image/foto-max.jpg').default%>" alt="фото автора проекта">
+        </picture>
+
+
+
+      <div class="about-author__text">
+        <h2 class="about-author__title">
+          Об авторе
+        </h2>
+        <p class="about-author__paragraph">
+          Умею собирать сайт по макету, пользуясь языками HTML, CSS и JavaScript. Понимаю процессы, сопутствующие созданию сайта и его публикации в сети. Могу включиться в совместную работу через Git и умею настраивать сборку проекта инструментом Webpack.
+          Также разбираюсь в устройстве более сложных сайтов с базами данных, могу создать API и управлять логикой взаимодействия с сервером. Изучал дополнительные технологии веб-разработчика: Node.js, NoSQL.
+        </p>
+      </div>
+    </section>
+    <footer class="footer">
+      <p class="name-author">
+        &#169; 2019. Orlov Danil
+      </p>
+      <nav class="footer__nav">
+       <!-- ссылка должна вести на главную страницу-->
+        <ul class="footer__ul">
+          <li class="footer__li">
+            <a class="footer__link" href="./">
+            Главная
+            </a>
+          </li>
+          <li class="footer__li">
+            <a class="footer__link" target="_blank" href="https://praktikum.yandex.ru/">
+            Яндекс.Практикум
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="footer__nav_icon">
+        <ul class="footer__ul">
+          <li class="footer__li">
+            <a class="footer__link_icon" target="_blank" href="https://github.com/orDanAn">
+              <img alt="переход на github.com" src="<%=require('./image/github.png').default%>">
+            </a>
+          </li>
+          <li class="footer__li">
+            <a class="footer__link_icon" target="_blank" href="https://www.facebook.com/profile.php?id=100011316277801">
+              <img alt="переход на facebook.com" src="<%=require('./image/iconmonstr-facebook-6.png').default%>">
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+    </footer>
+    <footer class="footer_mobile">
+      <div class="footer__mobile-nav">
+        <nav class="footer__nav">
+        <!-- ссылка должна вести на главную страницу-->
+        <ul class="footer__ul">
+          <li class="footer__li">
+            <a class="footer__link" href="./">
+              Главная
+            </a>
+          </li>
+          <li class="footer__li">
+            <a class="footer__link" target="_blank" href="https://praktikum.yandex.ru/">
+              Яндекс.Практикум
+            </a>
+          </li>
+        </ul>
+
+        </nav>
+        <nav class="footer__nav_icon">
+          <ul class="footer__ul_icon">
+            <li class="footer__li">
+              <a class="footer__link_icon" target="_blank" href="https://github.com/orDanAn">
+                <img alt="переход на github.com" src="<%=require('./image/github.png').default%>">
+              </a>
+            </li>
+            <li class="footer__li">
+              <a class="footer__link_icon" target="_blank" href="https://www.facebook.com/profile.php?id=100011316277801">
+                <img alt="переход на facebook.com" src="<%=require('./image/iconmonstr-facebook-6.png').default%>">
+              </a>
+            </li>
+          </ul>
+
+        </nav>
+      </div>
+      <p class="name-author">
+        &#169; 2019. Orlov Danil
+      </p>
+    </footer>
+      <!-- Чтобы открыть карточку необходимо добавить popup_is-opened-->
+    <div class="popup" id="popup">
+
+    </div>
+    <template id="popup-auth">
+      <div class="popup__content">
+        <img src="<%=require('./image/icon-close.svg').default%>" alt="закрыть форму" class="popup__close" id="popup-close">
+        <h3 class="popup__title">Вход</h3>
+        <form class="popup__form" name="formAuth">
+          <p class="popup__input-name">Email</p>
+          <input type="email" class="popup__input" placeholder="Введите почту" pattern="^([\w0-9_-]\.)*[\w0-9_-]+@[\w0-9_-]+(\.[\w0-9_-]+)*\.\w{2,6}$" required>
+          <p class="popup__error" id="formAuth-error-email"></p>
+          <p class="popup__input-name">Пароль</p>
+          <input type="password" class="popup__input" placeholder="Введите пароль" minlength="6" required>
+          <p class="popup__error" id="formAuth-error-password"></p>
+          <p class="popup__error popup__error_up-button" id="formAuth-error-up-button"></p>
+          <button class="popup__button" disabled id="button-formAuth">Войти</button>
+          <p class="popup__choice">
+            или <span class="popup__choice_color-blue" id="button-sign-up">Зарегистрироваться</span>
+          </p>
+        </form>
+      </div>
+    </template>
+    <template id="popup-sign-up">
+        <div class="popup__content">
+        <img src="<%=require('./image/icon-close.svg').default%>" alt="закрыть форму" class="popup__close">
+        <h3 class="popup__title">Регистрация</h3>
+        <form class="popup__form" name="formSingUp">
+          <p class="popup__input-name">Email</p>
+          <input type="email" class="popup__input" placeholder="Введите почту" pattern="^([\w0-9_-]\.)*[\w0-9_-]+@[\w0-9_-]+(\.[\w0-9_-]+)*\.\w{2,6}$" required>
+          <p class="popup__error" id="formSingUp-error-email"></p>
+          <p class="popup__input-name">Пароль</p>
+          <input type="password" class="popup__input" placeholder="Введите пароль" minlength="6" required>
+          <p class="popup__error" id="formSingUp-error-password"></p>
+          <p class="popup__input-name">Имя</p>
+          <input type="text" class="popup__input" placeholder="Введите своё имя" minlength="2" maxlength="20" required>
+          <p class="popup__error" id="formSingUp-error-name"></p>
+          <p class="popup__error popup__error popup__error_up-button" id="formSingUp-error-up-button"></p>
+          <button class="popup__button" disabled id="button-formSingUp">Зарегистрироваться</button>
+          <p class="popup__choice">
+            или <span class="popup__choice_color-blue" id="button-enter">Войти</span>
+          </p>
+        </form>
+      </div>
+    </template>
+
+    <template id="popup-sign-in">
+      <div class="popup__content popup__content_message">
+        <img src="<%=require('./image/icon-close.svg').default%>" alt="закрыть форму" class="popup__close">
+        <h3 class="popup__title popup__title_message">Пользователь успешно <br> зарегистрирован!</h3>
+        <a class="popup__link" id="enter">Выполнить вход</a>
+      </div>
+    </template>
+
+    <!-- для включения popup_is-opened -->
+
+      <div class="popup popup_top" id="menu-mobile">
+        <div class="menu-mobile">
+          <header class="header">
+            <h3 class="header__logo">
+              NewsExplorer
+            </h3>
+            <div class="header__menu">
+              <button class="menu-mobile__close">
+              </button>
+            </div>
+          </header>
+
+          <div class="menu-mobile__content">
+            <a class="menu-mobile__link menu-mobile__link_activ" href="./">
+              Главная
+            </a>
+            <!--для активации добавить класс menu-mobile__link_activ-->
+            <a class="menu-mobile__link" id="saved-articles-mobile" href="./second">
+              Сохранённые статьи
+            </a>
+              <!--для активации добавить класс menu-mobile__button_activ-->
+            <button class="menu-mobile__button" id="authButton-mobile">
+              Авторизоваться
+            </button>
+            <button class="menu-mobile__button" id="logOutButton-mobile">
+              <span class="header-button__text">ssss</span>
+              <img class="button-image" src="<%=require('./image/logout.svg').default%>" alt="иконка выхода">
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+    <template id="card">
+      <div class="card">
+        <div class="card__image">
+          <!--при сохранение добовляем card__save-icon_saved  сохраненные карты card__del-icon-->
+          <button class="card__save-icon">
+
+          </button>
+           <!-- для того, чтобы добавить сообщение нужен класс card__message_activ-->
+          <p class="card__message">Войдите, чтобы сохранять статьи</p>
+          <p class="card__message card__message_about-news "></p>
+        </div>
+        <a class="card__link"  href="" target="_blank">
+          <div class="card__information">
+            <p class="card__data">
+            </p>
+            <div class="card__information_height">
+              <h3 class="card__title">
+              </h3>
+              <p class="card__text">
+              </p>
+            </div>
+            <p class="card__source">
+            </p>
+          </div>
+      </a>
+      </div>
+    </template>
+
+
+  </div>
+
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+
+</body>
+</html>

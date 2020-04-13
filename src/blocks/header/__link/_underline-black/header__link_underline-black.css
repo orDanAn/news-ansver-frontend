@@ -1,0 +1,15 @@
+.header__link_underline-black {
+  border-bottom: 3px solid #1A1B22;
+  padding-bottom: 26px;
+  margin-top: 29px;
+}
+
+@media screen and (max-width: 770px) {
+  .header__link_underline-black {
+    padding-bottom: 19px;
+    margin-top: 22px;
+
+
+  }
+
+}

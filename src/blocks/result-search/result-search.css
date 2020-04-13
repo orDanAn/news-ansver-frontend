@@ -1,0 +1,13 @@
+@import url('./__title/result-search__title.css');
+@import url('../place-card/place-card.css');
+@import url('./__button/result-search__button.css');
+@import url('../not-found/not-found.css');
+
+.result-search {
+  display: flex;
+  flex-direction: column;
+  background: #F5F6F7;
+  width: 100%;
+  max-width: 1440px;
+
+}

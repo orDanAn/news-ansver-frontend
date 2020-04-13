@@ -1,0 +1,31 @@
+.name-author {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #B6BCBF;
+    padding-left: 104px;
+    margin: 0;
+}
+
+
+
+@media screen and (max-width: 950px) {
+  .name-author {
+    padding-left: 40px;
+
+  }
+
+}
+
+
+@media screen and (max-width: 685px) {
+  .name-author {
+    padding: 0;
+    margin-top: 0;
+
+  }
+
+}
+

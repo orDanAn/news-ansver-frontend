@@ -1,0 +1,12 @@
+@import url('./_color-blue/popup__choice_color-blue.css');
+.popup__choice {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #000000;
+    margin: 16px 0 28px 0;
+
+}

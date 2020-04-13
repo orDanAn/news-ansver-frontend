@@ -1,0 +1,15 @@
+@import url('./_activ/menu-mobile__link_activ.css');
+
+.menu-mobile__link {
+
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 56px;
+  color: #FFFFFF;
+  margin: 0 0 0 16px;
+  text-decoration: none;
+  display: none;
+
+}

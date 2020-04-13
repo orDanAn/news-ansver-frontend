@@ -1,0 +1,23 @@
+@import url('./vendor/normalize.css');
+
+@import url('./vendor/fonts.css');
+
+@import url("./blocks/page/page.css");
+
+@import url('./blocks/search/search.css');
+
+@import url('./blocks/result-search/result-search.css');
+
+@import url('./blocks/about-author/about-author.css');
+
+@import url('./blocks/footer/footer.css');
+
+@import url('./blocks/name-author/name-author.css');
+
+@import url('./blocks/popup/popup.css');
+
+@import url('./blocks/main-saved/main-saved.css');
+
+@import url('./blocks/menu-mobile/menu-mobile.css');
+
+

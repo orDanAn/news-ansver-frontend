@@ -1,0 +1,18 @@
+@import url('./__text/main-saved__text.css');
+@import url('./__title/main-saved__title.css');
+
+.main-saved {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  width: 100%;
+
+}
+
+@media screen and (max-width: 509px) {
+  .main-saved {
+    margin-bottom: 21px;
+
+  }
+
+}

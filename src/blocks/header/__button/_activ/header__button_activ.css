@@ -1,0 +1,13 @@
+.header__button.header__button_activ {
+  display: flex;
+}
+
+
+@media screen and (max-width: 685px) {
+  .header__button.header__button_activ {
+    display: none;
+
+
+  }
+
+}

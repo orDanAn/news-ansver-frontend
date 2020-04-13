@@ -1,0 +1,20 @@
+@import url('../__nav/footer__nav.css');
+@import url('../__mobile-nav/footer__mobile-nav.css');
+
+
+.footer_mobile {
+  display: flex;
+  flex-direction: column;
+  display: none;
+
+}
+
+@media screen and (max-width: 685px) {
+  .footer_mobile {
+    display: flex;
+    Width: 90%;
+
+
+  }
+
+}

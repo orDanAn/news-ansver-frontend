@@ -1,0 +1,16 @@
+.popup__input-name {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2F71E5;
+    margin: auto;
+    text-align: left;
+}
+
+@media screen and (max-width: 509px) {
+  .popup__input-name {
+    text-align: left;
+  }
+}

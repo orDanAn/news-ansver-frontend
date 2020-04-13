@@ -1,0 +1,31 @@
+.card__message.card__message_about-news {
+  position: absolute;
+  top: 0;
+  left: 24px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  display:flex;
+  z-index: 1;
+  display: none;
+}
+
+@media screen and (max-width: 770px) {
+  .card__message.card__message_about-news {
+
+    left: 8px;
+
+  }
+
+}
+
+@media screen and (max-width: 764px) {
+  .card__message.card__message_about-news {
+
+    left: 16px;
+
+  }
+
+}

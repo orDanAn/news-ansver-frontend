@@ -1,0 +1,10 @@
+@import url('./__title/search-main__title.css');
+@import url('./__text/search-main__text.css');
+@import url('./search-field/search-field.css');
+
+.search-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}

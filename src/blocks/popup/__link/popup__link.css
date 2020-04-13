@@ -1,0 +1,13 @@
+.popup__link {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #2F71E5;
+  cursor: pointer;
+  display: block;
+  margin: 14px 0 51px 0;
+
+}
+

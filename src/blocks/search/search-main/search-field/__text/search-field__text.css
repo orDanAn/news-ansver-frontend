@@ -1,0 +1,37 @@
+.search-field__text {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    height: 60px;
+    border: none;
+    backdrop-filter: blur(8px);
+    border-radius: 100px;
+    width: 608px;
+    padding-left: 24px;
+    outline: none;
+    caret-color: #2F71E5;
+}
+
+.search-field__text:focus {
+  box-shadow: 0 0 0 2px #2F71E5;
+
+}
+
+@media screen and (max-width: 770px) {
+  .search-field__text  {
+
+    height: 50px;
+
+  }
+
+}
+
+@media screen and (max-width: 509px) {
+  .search-field__text  {
+    width: 262px;
+    height: 56px;
+
+  }
+
+}

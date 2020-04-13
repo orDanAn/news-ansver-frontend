@@ -1,0 +1,13 @@
+@import url("./__close/menu-mobile__close.css");
+@import url('./__content/menu-mobile__content.css');
+@import url('./__link/menu-mobile__link.css');
+@import url('./__button/menu-mobile__button.css');
+
+
+.menu-mobile {
+  background: #1A1B22;
+  border-radius: 0 0 16px 16px;
+
+  width: 100%;
+
+}

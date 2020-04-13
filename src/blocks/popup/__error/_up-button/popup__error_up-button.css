@@ -1,0 +1,18 @@
+
+.popup__error.popup__error_up-button {
+  margin-left: 80px;
+  margin-top: -14px;
+}
+
+
+@media screen and (max-width: 509px) {
+  .popup__error.popup__error_up-button {
+
+    margin-top: 0px;
+    margin-left: 0px;
+    position: static;
+}
+  }
+
+
+
